@@ -42,6 +42,7 @@ main{
 
 .localNavigation{
     width: 300px;
+  margin: 1;
     text-align: center;
     background-color: #888;
     color: #fff;
