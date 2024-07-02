@@ -2,7 +2,6 @@ html {
   font-size: 10px;
 }
 
-
 h1 {
   font-size: 60px;
 }
@@ -13,12 +12,11 @@ p, li {
   letter-spacing: 1px;
 }
 
-
 html {
   background-color: #EEEEEE;
 }
 body {
-  width: 600px;
+  width: 1800px;
   margin: 0 auto;
   padding: 0 20px 20px 20px;
   border: 5px solid #808080;
