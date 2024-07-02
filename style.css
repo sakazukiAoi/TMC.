@@ -45,11 +45,13 @@ main{
     text-align: center;
     background-color: #888;
     color: #fff;
-}
 
+  
 h1 {
   margin: 0;
   padding: 20px 0;
   color: 	#000000;
   text-shadow: 3px 3px 1px #4682b4;
 }
+}
+
