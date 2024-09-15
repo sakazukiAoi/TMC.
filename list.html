@@ -29,9 +29,9 @@
 
 
 
-<style>
+    <style>
         .container {
-            display: 90%;
+            display: flex;
         }
 
         .button-panel {
@@ -51,20 +51,21 @@
             padding: 20px;
             width: 100%;
         }
-</style>
+    </style>
 
   <body>
 
 <div class="container">
     <div class="button-panel">
-        <button onclick="loadContent('No1.html')">A</button>
+        <button onclick="loadContent('No1.html')">阿多田　夕立</button>
         <button onclick="loadContent('No2.html')">B</button>
         <button onclick="loadContent('No3.html')">C</button>
         <button onclick="loadContent('No4.html')">D</button>
     </div>
     <div class="content-panel" id="content-panel">
-<h2> </h2>
-<p> </p></div>
+        <!-- ここに外部HTMLが読み込まれる -->
+        <p>NO Select</p>
+    </div>
 </div>
 
 <script>
@@ -79,9 +80,6 @@
         xhr.send();
     }
 </script>
-
-
-
 </body>
 
 
@@ -100,39 +98,11 @@
 
 
 
-  <!--
-  
-    <style>
-        .containerLI {
-            display: flex;
-        }
-
-        .button-panel {
-            display: flex;
-            flex-direction: column;
-            margin-right: 20px;
-        }
-
-        .button-panel button {
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        .contentLI-panel {
-            border: 1px solid #ccc;
-            padding: 20px;
-            width: 100%;
-        }
-    </style>
-  </head>
-
-
-  
+  <!--  
 <body>
     <div class="contentLI">
     <div class="button-panel">
-        <button onclick="loadcontentLI('No1.html')">阿多田　夕立</button>
+        <button onclick="loadcontentLI('No1.html')"></button>
         <button onclick="loadcontentLI('No2.html')">奈良　　心</button>
         <button onclick="loadcontentLI('No3.html')">　　　　優</button>
         <button onclick="loadcontentLI('No4.html')">芒星　クロネ</button>
