@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .container {
+        .containerLI {
             display: flex;
         }
 
@@ -23,7 +23,7 @@
             font-size: 16px;
         }
 
-        .content-panel {
+        .contentLI-panel {
             border: 1px solid #ccc;
             padding: 20px;
             width: 100%;
@@ -48,26 +48,25 @@
 
   
 <body>
-    <div class="content">
+    <div class="contentLI">
     <div class="button-panel">
-        <button onclick="loadcontent('No1.html')">阿多田　夕立</button>
-        <button onclick="loadcontent('No2.html')">奈良　　心</button>
-        <button onclick="loadcontent('No3.html')">　　　　優</button>
-        <button onclick="loadcontent('No4.html')">芒星　クロネ</button>
+        <button onclick="loadcontentLI('No1.html')">阿多田　夕立</button>
+        <button onclick="loadcontentLI('No2.html')">奈良　　心</button>
+        <button onclick="loadcontentLI('No3.html')">　　　　優</button>
+        <button onclick="loadcontentLI('No4.html')">芒星　クロネ</button>
     </div>
-    <div class="content-panel" id="content-panel">
+    <div class="contentLI-panel" id="contentLI-panel">
         <!-- ここに外部HTMLが読み込まれる -->
         <p>ここにコンテンツが表示されます。</p>
     </div>
 </div>
-
 <script>
-    function loadContent(filename) {
+    function loadContentLI(filename) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', filename, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                document.getElementById('content-panel').innerHTML = xhr.responseText;
+                document.getElementById('contentLI-panel').innerHTML = xhr.responseText;
             }
         };
         xhr.send();
