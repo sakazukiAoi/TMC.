@@ -6,6 +6,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <header class="leftNavigation">
+      <p><a href="home.html" aria-label="Current Page: HOME">HOME</a></p>
+      <hr size="5">
+       <p><font face="serif">DATA</font></p>
+       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
+       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
+       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
+       <hr size="5">
+       <p><font face="serif">LYNC</font></p>
+       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
+       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
+       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
+       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
+    </header>
+
+
+
+
+
+
+
+
+<style>
+        .container {
+            display: flex;
+        }
+
+        .button-panel {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        .button-panel button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .content-panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 100%;
+        }
+</style>
+
+  <body>
+
+<div class="container">
+    <div class="button-panel">
+        <button onclick="loadContent('No1.html')">A</button>
+        <button onclick="loadContent('No2.html')">B</button>
+        <button onclick="loadContent('No3.html')">C</button>
+        <button onclick="loadContent('No4.html')">D</button>
+    </div>
+    <div class="content-panel" id="content-panel"><!-- contentA.html -->
+<h2>Aのコンテンツ</h2>
+<p>これはAの外部HTMLファイルから読み込まれたコンテンツです。</p></div>
+</div>
+
+<script>
+    function loadContent(filename) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', filename, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('content-panel').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--
+  
     <style>
         .containerLI {
             display: flex;
@@ -30,21 +126,7 @@
         }
     </style>
   </head>
-  
-    <header class="leftNavigation">
-      <p><a href="home.html" aria-label="Current Page: HOME">HOME</a></p>
-      <hr size="5">
-       <p><font face="serif">DATA</font></p>
-       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
-       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
-       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
-       <hr size="5">
-       <p><font face="serif">LYNC</font></p>
-       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
-       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
-    </header>
+
 
   
 <body>
@@ -74,6 +156,11 @@
 </script>
 
 </body>
+
+
+
+-->
+</head>
 </html>
 
 
