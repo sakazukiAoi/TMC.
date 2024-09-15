@@ -1,5 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" >
+<title>TMC</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .button-panel {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        .button-panel button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .content-panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 100%;
+        }
+    </style>
+      <header class="leftNavigation">
+      <p><a href="home.html" aria-label="Current Page: HOME">HOME</a></p>
+      <hr size="5">
+       <p><font face="serif">DATA</font></p>
+       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
+       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
+       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
+       <hr size="5">
+       <p><font face="serif">LYNC</font></p>
+       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
+       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
+       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
+       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
+</head>
+<body>
+
+<div class="container">
+    <div class="button-panel">
+        <button onclick="loadContent('No1.html')">阿多田　夕立</button>
+        <button onclick="loadContent('No2.html')">奈良　　心</button>
+        <button onclick="loadContent('No3.html')">　　　　優</button>
+        <button onclick="loadContent('No4.html')">robert&nbsp;john&nbsp;maudsley</button>
+    </div>
+    <div class="content-panel" id="content-panel">
+        <!-- ここに外部HTMLが読み込まれる -->
+        <p>ここにコンテンツが表示されます。</p>
+    </div>
+</div>
+
+<script>
+    function loadContent(filename) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', filename, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('content-panel').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="ja">
 
 
   <head>
@@ -95,7 +174,3 @@
         </div>
         </form>
 -->
-
-</div> 
-
- <!-- 名前を左に表示　クリックすると　名前　アイコン　キャラ紹介　いあキャラの中身　を表示-->
