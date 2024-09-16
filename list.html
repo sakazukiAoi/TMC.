@@ -28,11 +28,15 @@
 
 
 
+
+
+
+
 <body>
-<div class="container">
     <style>
         .container {
             display: flex;
+            margin-right: 20px;
         }
 
         .button-panel {
@@ -48,24 +52,29 @@
         }
 
         .content-panel {
-            margin-left: 20px;
+            margin-right: 20px;
             border: 1px solid #ccc;
             padding: 20px;
             width: 100%;
         }
     </style>
 
+
+
+<div class="container">
     <div class="button-panel">
-        <button onclick="loadContent('No1.html')">阿多田　夕立</button>
+        <button onclick="loadContent('No1.html')">A</button>
         <button onclick="loadContent('No2.html')">B</button>
         <button onclick="loadContent('No3.html')">C</button>
         <button onclick="loadContent('No4.html')">D</button>
     </div>
+</div>
+
     <div class="content-panel" id="content-panel">
         <!-- ここに外部HTMLが読み込まれる -->
         <p>NO Select</p>
     </div>
-</div>
+
 
 <script>
     function loadContent(filename) {
@@ -76,9 +85,10 @@
                 document.getElementById('content-panel').innerHTML = xhr.responseText;
             }
         };
-        xhr.send();
+xhr.send();
     }
 </script>
+
 </body>
 
 
