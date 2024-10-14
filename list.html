@@ -2,7 +2,15 @@
 <html lang="ja">
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" >
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 <title>TMC</title>
+<script>
+$(function(){
+  $("#cover").load("header.html");
+});
+</script>
+
+
 <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,6 +122,14 @@ xhr.send();
 
 </body>
 
+
+
+    <body>
+    <div id="cover">
+      <div id="section1"></div>
+      <div id="section2"></div>
+    </div>
+  </body>
 
 
 </head>
