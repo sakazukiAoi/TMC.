@@ -1,64 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" >
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-<title>TMC</title>
-<script>
-$(function(){
-  $("#cover").load("header.html");
-});
-</script>
-
-
-<link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <header class="leftNavigation">
-      <p><a href="home.html" aria-label="Current Page: HOME">HOME</a></p>
-      <hr size="5">
-       <p><font face="serif">DATA</font></p>
-       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
-       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
-       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
-       <hr size="5">
-       <p><font face="serif">LYNC</font></p>
-       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
-       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
-    </header>
-
-
-
-
-
-
-
-
-
-
-<body>
+    <title>外部HTML読み込みとスクリプト実行</title>
     <style>
         .container {
             display: flex;
-            width: 13.55%;
         }
 
         .button-panel {
             display: flex;
             flex-direction: column;
+            margin-right: 20px;
         }
 
         .button-panel button {
-            margin-bottom: 0.2px;
-            text-align: left;
+            margin-bottom: 10px;
             padding: 10px;
-            padding-left: 15%;
             font-size: 16px;
-            white-space: pre ;
         }
 
         .content-panel {
@@ -67,45 +29,20 @@ $(function(){
             width: 100%;
         }
     </style>
+</head>
+<body>
 
-
-
-<div class="container" style="width: 300px;">
+<div class="container">
     <div class="button-panel">
         <button onclick="loadContent('CAs/No1.html')">阿多田　　夕立</button>
         <button onclick="loadContent('CAs/No2.html')">奈良　　　心</button>
         <button onclick="loadContent('CAs/No3.html')">優</button>
         <button onclick="loadContent('CAs/No4.html')">芒星　　　クロネ</button>
-        <button onclick="loadContent('CAs/No5.html')">幸村</button>
-        <button onclick="loadContent('CAs/No6.html')">花韮　　　想沙</button>
-        <button onclick="loadContent('CAs/No7.html')">早乙女　　語</button>
-        <button onclick="loadContent('CAs/No8.html')">廻詩達　　糾</button>
-        <button onclick="loadContent('CAs/No9.html')">枸累　　　藍</button>
-        <button onclick="loadContent('CAs/No10.html')">山上　　　蘭希</button>
-        <button onclick="loadContent('CAs/No11.html')">月村　　　彼方</button>
-        <button onclick="loadContent('CAs/No12.html')">宇都　　　キソ</button>
-        <button onclick="loadContent('CAs/No13.html')">玖波　　　小豆</button>
-        <button onclick="loadContent('CAs/No14.html')">西麻植　　蛙</button>
-        <button onclick="loadContent('CAs/No15.html')">∷宵華   　加瀬木∷</button>
-        <button onclick="loadContent('CAs/No16.html')">黒井　　　飴</button>
-        <button onclick="loadContent('CAs/No17.html')">青蓮華　　附子</button>
-        <button onclick="loadContent('CAs/No18.html')">Noah　Aldrich</button>
-        <button onclick="loadContent('CAs/No19.html')">葉月　　　秋</button>
-        <button onclick="loadContent('CAs/No20.html')">スミレ</button>
-        <button onclick="loadContent('CAs/No21.html')">汐見　　　美津</button>
-        <button onclick="loadContent('CAs/No22.html')">古灯　　　朝</button>
-        <button onclick="loadContent('CAs/No23.html')">robert　john　maudsley</button>
-        <button onclick="loadContent('CAs/No24.html')">Sextilis　Custokey</button>
-        <button onclick="loadContent('CAs/No25.html')">月村     優</button>
-        
+    </div>
+    <div class="content-panel" id="content-panel">
+        <p>ここにコンテンツが表示されます。</p>
     </div>
 </div>
-
-    <div class="content-panel" id="content-panel">
-        <!-- ここに外部HTMLが読み込まれる -->
-        <p>NO Select</p>
-    </div>
-
 
 <script>
     function loadContent(filename) {
@@ -113,24 +50,22 @@ $(function(){
         xhr.open('GET', filename, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                document.getElementById('content-panel').innerHTML = xhr.responseText;
+                // 外部HTMLを挿入する
+                var contentPanel = document.getElementById('content-panel');
+                contentPanel.innerHTML = xhr.responseText;
+
+                // コンテンツ内の<script>タグを実行する
+                var scripts = contentPanel.getElementsByTagName('script');
+                for (var i = 0; i < scripts.length; i++) {
+                    var script = document.createElement('script');
+                    script.text = scripts[i].text; // スクリプトの内容をコピー
+                    document.body.appendChild(script); // スクリプトを実行
+                }
             }
         };
-xhr.send();
+        xhr.send();
     }
 </script>
 
 </body>
-
-
-
-    <body>
-    <div id="cover">
-      <div id="section1"></div>
-      <div id="section2"></div>
-    </div>
-  </body>
-
-
-</head>
 </html>
