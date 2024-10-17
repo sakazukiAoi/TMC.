@@ -45,7 +45,7 @@ $(function(){
             margin-bottom: 0.2px;
             text-align: left;
             padding: 10px;
-            padding-left: 15%;
+            padding-left: 11%;
             font-size: 16px;
             white-space: pre ;
         }
@@ -88,50 +88,6 @@ $(function(){
         <button onclick="loadContent('CAs/No25.html')">Sextilis　Custokey</button>
         <button onclick="loadContent('CAs/No26.html')">月村　　　優</button>
         
-    </div>
-    <div class="content-panel" id="content-panel">
-        <p>NO SELECT</p>
-    </div>
-</div>
-  いったん消し-->
-<!--いったん消し
-<script>
-    function loadContent(filename) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', filename, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // 外部HTMLを挿入する
-                var contentPanel = document.getElementById('content-panel');
-                contentPanel.innerHTML = xhr.responseText;
-
-                // コンテンツ内の<script>タグを実行する
-                var scripts = contentPanel.getElementsByTagName('script');
-                for (var i = 0; i < scripts.length; i++) {
-                    var script = document.createElement('script');
-                    script.text = scripts[i].text; // スクリプトの内容をコピー
-                    document.body.appendChild(script); // スクリプトを実行
-                }
-            }
-        };
-        xhr.send();
-    }
-</script>
-
-</body>
-  いったん消し-->
-</html>
-
-
-<!--
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>画像ボタンで外部HTML読み込み</title>
-
 -->
 
 
@@ -172,10 +128,31 @@ $(function(){
 <div class="container">
     <div class="button-panel">
         <!-- 画像を使ったバナー風のボタン -->
-        <img src="CAs/buttoniconimg/25.png" alt="A" onclick="loadContent('CAs/No1.html')">
-        <button onclick="loadContent('CAs/No2.html')" >箕眞　　　句々類</button>
-        <button onclick="loadContent('CAs/No3.html')" >奈良　　　心</button>
-        <button onclick="loadContent('CAs/No4.html')" >優</button>
+        <img src="CAs/buttoniconimg/1.png" alt="A" onclick="loadContent('CAs/No1.html')">
+        <img src="CAs/buttoniconimg/2.png" alt="A" onclick="loadContent('CAs/No2.html')">
+        <img src="CAs/buttoniconimg/3.png" alt="A" onclick="loadContent('CAs/No3html')">
+        <img src="CAs/buttoniconimg/4.png" alt="A" onclick="loadContent('CAs/No4html')">
+        <img src="CAs/buttoniconimg/5.png" alt="A" onclick="loadContent('CAs/No5html')">
+        <img src="CAs/buttoniconimg/6.png" alt="A" onclick="loadContent('CAs/No6.html')">
+        <img src="CAs/buttoniconimg/7.png" alt="A" onclick="loadContent('CAs/No7.html')">
+        <img src="CAs/buttoniconimg/8.png" alt="A" onclick="loadContent('CAs/No8html')">
+        <img src="CAs/buttoniconimg/9.png" alt="A" onclick="loadContent('CAs/No9html')">
+        <img src="CAs/buttoniconimg/10.png" alt="A" onclick="loadContent('CAs/No10html')">
+        <img src="CAs/buttoniconimg/11.png" alt="A" onclick="loadContent('CAs/No11.html')">
+        <img src="CAs/buttoniconimg/12.png" alt="A" onclick="loadContent('CAs/No12.html')">
+        <img src="CAs/buttoniconimg/13.png" alt="A" onclick="loadContent('CAs/No13html')">
+        <img src="CAs/buttoniconimg/14.png" alt="A" onclick="loadContent('CAs/No14html')">
+        <img src="CAs/buttoniconimg/15.png" alt="A" onclick="loadContent('CAs/No15html')">
+        <img src="CAs/buttoniconimg/16.png" alt="A" onclick="loadContent('CAs/No16.html')">
+        <img src="CAs/buttoniconimg/17.png" alt="A" onclick="loadContent('CAs/No17.html')">
+        <img src="CAs/buttoniconimg/18.png" alt="A" onclick="loadContent('CAs/No18html')">
+        <img src="CAs/buttoniconimg/19.png" alt="A" onclick="loadContent('CAs/No19html')">
+        <img src="CAs/buttoniconimg/20.png" alt="A" onclick="loadContent('CAs/No20html')">
+        <img src="CAs/buttoniconimg/21.png" alt="A" onclick="loadContent('CAs/No21.html')">
+        <img src="CAs/buttoniconimg/22.png" alt="A" onclick="loadContent('CAs/No22.html')">
+        <img src="CAs/buttoniconimg/23.png" alt="A" onclick="loadContent('CAs/No23html')">
+        <img src="CAs/buttoniconimg/24.png" alt="A" onclick="loadContent('CAs/No24html')">
+        <img src="CAs/buttoniconimg/25.png" alt="A" onclick="loadContent('CAs/No25html')">
     </div>
     <div class="content-panel" id="content-panel">
         <p>ここにコンテンツが表示されます。</p>
