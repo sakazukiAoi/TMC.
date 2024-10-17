@@ -58,7 +58,7 @@ $(function(){
     </style>
 </head>
 <body>
-
+<!--いったん消し
 <div class="container" style="width: 90%">
     <div class="button-panel" style="width: 280px">
         <button onclick="loadContent('CAs/No1.html')" >阿多田　　夕立</button>
@@ -93,7 +93,8 @@ $(function(){
         <p>NO SELECT</p>
     </div>
 </div>
-
+  いったん消し-->
+<!--いったん消し
 <script>
     function loadContent(filename) {
         var xhr = new XMLHttpRequest();
@@ -118,4 +119,96 @@ $(function(){
 </script>
 
 </body>
+  いったん消し-->
 </html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像ボタンで外部HTML読み込み</title>
+
+-->
+
+
+
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .button-panel {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        /* 画像をバナー風に調整 */
+        .button-panel img {
+            margin-bottom: 10px; /* 画像間のスペース */
+            width: 150px; /* バナーの幅を指定 */
+            cursor: pointer; /* クリックできるように */
+            border: 2px solid transparent; /* 枠線を透明にしておく */
+        }
+
+        /* ホバー時に枠線の色を変える */
+        .button-panel img:hover {
+            border-color: #333;
+        }
+
+        .content-panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="button-panel">
+        <!-- 画像を使ったバナー風のボタン -->
+        <img src="CAs/buttoniconimg/25" alt="A" onclick="loadContent('CAs/No1.html')">
+        <button onclick="loadContent('CAs/No2.html')" >箕眞　　　句々類</button>
+        <button onclick="loadContent('CAs/No3.html')" >奈良　　　心</button>
+        <button onclick="loadContent('CAs/No4.html')" >優</button>
+    </div>
+    <div class="content-panel" id="content-panel">
+        <p>ここにコンテンツが表示されます。</p>
+    </div>
+</div>
+
+<script>
+    function loadContent(filename) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', filename, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var contentPanel = document.getElementById('content-panel');
+                contentPanel.innerHTML = xhr.responseText;
+
+                var scripts = contentPanel.getElementsByTagName('script');
+                for (var i = 0; i < scripts.length; i++) {
+                    if (scripts[i].src) {
+                        var script = document.createElement('script');
+                        script.src = scripts[i].src;
+                        document.body.appendChild(script);
+                    } else {
+                        var script = document.createElement('script');
+                        script.text = scripts[i].text;
+                        document.body.appendChild(script);
+                    }
+                }
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>
+
