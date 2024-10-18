@@ -88,6 +88,24 @@ $(function(){
         }
     </style>
 </head>
+    <script>
+    // すべてのプラスボタンにイベントリスナーを追加
+    document.querySelectorAll('.toggleTextBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');  // ボタンのdata-target属性からターゲットIDを取得
+        const textBox = document.getElementById(targetId);  // 対応するテキストボックスを取得
+
+        // テキストボックスの表示/非表示を切り替え
+        if (textBox.style.display === 'block') {
+          textBox.style.display = 'none';
+          this.textContent = '+'; // ボタンの表示を「+」に戻す
+        } else {
+          textBox.style.display = 'block';
+          this.textContent = '−'; // ボタンの表示を「−」に変更
+        }
+      });
+    });
+  </script>
 <body>
 
   <!--いったん消し
