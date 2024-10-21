@@ -1,2 +1,74 @@
-<h1>芒星クロネ</h1>
-<h2>ボウセイクロネ</h2>
+<!DOCTYPE html>
+<html>
+<body>
+<!--基本情報-->
+<div class="karte-temp-text"><h1><a href="https://iachara.com/view/6563593"style="text-decoration:none;">枸累　藍</a></h1></div>
+<h2>クルイ　アイ</h2>
+<h3>
+    <table align="center" border="1">
+　　　<tr align="center">
+　　　<td>身長</td><td>性別</td><td>誕生日</td><td>年齢</td><td valign="middle">職業</td><td>STR</td><td>CON</td><td>POW</td><td>DEX</td><td>APP</td><td>SIZ</td><td>INT</td><td>EDU</td>
+　　　</tr>
+　　　<tr align="center">
+　　　<td>163</td><td>女</td><td>3/24</td><td>17</td><td>高校2</td><td>10</td><td>9</td><td>11</td><td>11</td><td>13</td><td>13</td><td>12</td><td>14</td>
+　　　</tr>
+　　　</table>
+</h3>
+<p>
+    <div class="tet-box">
+        <p>くーちゃんというぬいぐるみを常に持ち歩いている</p>
+        <p>大量生産が得意</p>        
+    </div>
+</p>
+
+
+</body>	
+<body><!--+追加情報+-->
+
+  <!-- 複数のプラスボタンと対応するテキストボックス -->
+  <div>
+    <button class="toggleTextBtn" data-target="textBox1">+</button>　持ち物
+    <div id="textBox1" class="text-box">
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+
+  <div>
+    <button class="toggleTextBtn" data-target="textBox2">+</button>　通過済シナリオ
+    <div id="textBox2" class="text-box">
+      <p>ソープスクール</p>
+    </div>
+  </div>
+
+
+  <div>
+    <button class="toggleTextBtn" data-target="textBox3">+</button>　関係者
+    <div id="textBox3" class="text-box">
+      <p>窮鼠　　現　/私立柴咲高等学校工業科</p>
+      <p>芽茶　　万福/  〃</p>
+      <p>寛那岐　輝　/  〃</p>
+    </div>
+  </div>
+
+  <script>
+    // すべてのプラスボタンにイベントリスナーを追加
+    document.querySelectorAll('.toggleTextBtn').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');  // ボタンのdata-target属性からターゲットIDを取得
+        const textBox = document.getElementById(targetId);  // 対応するテキストボックスを取得
+
+        // テキストボックスの表示/非表示を切り替え
+        if (textBox.style.display === 'block') {
+          textBox.style.display = 'none';
+          this.textContent = '+'; // ボタンの表示を「+」に戻す
+        } else {
+          textBox.style.display = 'block';
+          this.textContent = '−'; // ボタンの表示を「−」に変更
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
