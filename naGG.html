@@ -37,8 +37,7 @@
 
 </head>
 <body>
-  
-  <h3>文字を入力してください（naGG語に変換されます）</h3>　
+  <h3>文字を入力してください（naGG語に変換されます）2025.4.1</h3>
     <textarea id="inputField" placeholder="ここに入力"></textarea>
 
   <h3>変換結果:</h3>
@@ -67,14 +66,14 @@
           if (char === "f") return "S";
           if (char === "g") return "R";
           if (char === "h") return "|으";
-          if (char === "i") return "O";
-          if (char === "j") return "ɓ";
+          if (char === "i") return "p";
+          if (char === "j") return "6";
           if (char === "k") return "つ";
-          if (char === "l") return "Đ";
-          if (char === "m") return "H";
-          if (char === "n") return "牛";
-          if (char === "o") return "ჵᖇ";
-          if (char === "p") return "月";
+          if (char === "l") return "ჵᖇ";
+          if (char === "m") return "牛";
+          if (char === "n") return "ﾄᖇ";
+          if (char === "o") return "月";
+          if (char === "p") return "Đ";
           if (char === "q") return "h";
           if (char === "r") return "b";
           if (char === "s") return "Ɵ";
@@ -84,13 +83,19 @@
           if (char === "w") return "う";
           if (char === "x") return "ħ";
           if (char === "y") return "L";
-          if (char === "z") return "ჩh";
+          if (char === "z") return "ჩ";
           if (char === "!") return "Ⴘ";
+          if (char === "?") return "-ə";
           if (char === "「") return "ɾ";
-          if (char === "『") return "ɾ";
+          if (char === "【") return "ɾ";
+          if (char === "{") return "ɾ";
+          if (char === "｛") return "ɾ";
+          if (char === "[") return "ɾ";
           if (char === "」") return "ɿ";
-          if (char === "』") return "ɿ";
-          if (char === "あ") return "H";
+          if (char === "】") return "ɿ";
+          if (char === "}") return "ɿ";
+          if (char === "]") return "ɿ";
+          if (char === "あ") return "";
           if (char === "い") return "";
           if (char === "う") return "";
           if (char === "え") return "";
@@ -138,70 +143,10 @@
           if (char === "わ") return "";
           if (char === "を") return "";
           if (char === "ん") return "";
-<!--
-ゔ
-がぎぐげご
-ざじずぜぞ
-だぢづでど
-ばびぶべぼ
-ヴ
-ガギグゲゴ
-ザジズゼゾ
-ダヂヅデド
-バビブベボ
-ヷヸヹヺ
-ぱぴぷぺぽ
-パピプペポ
--->
           if (char === "、") return ",";
           if (char === "。") return ".";
-          if (char === "ゑ") return ".";
-          if (char === "。") return ".";
-          if (char === "。") return ".";
-          if (char === "。") return ".";
-          if (char === "。") return ".";
-          if (char === "。") return ".";
-          if (char === "ぁ") return ".";
-          if (char === "ぃ") return ".";
-          if (char === "ぅ") return ".";
-          if (char === "ぇ") return ".";
-          if (char === "ぉ") return ".";
-          if (char === "っ") return ".";
-          if (char === "ゃ") return ".";
-          if (char === "ゅ") return ".";
-          if (char === "ょ") return ".";
-          if (char === "ゎ") return ".";
-          if (char === "ァ") return ".";
-          if (char === "ィ") return ".";
-          if (char === "ゥ") return ".";
-          if (char === "ェ") return ".";
-          if (char === "ォ") return ".";
-          if (char === "ヵ") return ".";
-          if (char === "ㇰ") return ".";
-          if (char === "ヶ") return ".";
-          if (char === "ㇱ") return ".";
-          if (char === "ㇲ") return ".";
-          if (char === "ッ") return ".";
-          if (char === "ㇳ") return ".";
-          if (char === "ㇴ") return ".";
-          if (char === "ㇵ") return ".";
-          if (char === "ㇶ") return ".";
-          if (char === "ㇷ") return ".";
-          if (char === "ㇸ") return ".";
-          if (char === "ㇹ") return ".";
-          if (char === "ㇺ") return ".";
-          if (char === "ャ") return ".";
-          if (char === "ュ") return ".";
-          if (char === "ョ") return ".";
-          if (char === "ㇻ") return ".";
-          if (char === "ㇼ") return ".";
-          if (char === "ㇽ") return ".";
-          if (char === "ㇾ") return ".";
-          if (char === "ㇿ") return ".";
-          if (char === "ヮ") return ".";
-          if (char === "ー") return "-";
-          if (char === "―") return "-";
-          if (char === "～") return "-";
+
+
           return char;
         })
         .join("");
@@ -223,9 +168,7 @@
         });
     });
   </script>
-</br>
-<a href="https://sakazukiaoi.github.io/sisaku008/">+アルファベット以外対応</a>
-<a href="https://sakazukiaoi.github.io/museum/">naGGの辞書</a>
+
   <script>
     // 入力欄の要素を取得
     const inputField = document.getElementById("inputField");
@@ -242,6 +185,8 @@
     // 初期化: ページ読み込み時に高さを調整
     window.addEventListener("load", adjustHeight);
   </script>
+
+
 
 
     <div class="input-container">
