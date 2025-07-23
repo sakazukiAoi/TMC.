@@ -1,76 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <link  rel="stylesheet"  href="https://unpkg.com/98.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <head>
-    
-    <div class="window" style="width: 40% ;">
-        <div class="window-body">
-    <P>what your name?</P>
-    <!-- クリックして3秒後にページ遷移する -->
-<script type="text/javascript">
-    $(function() {
-    
-      // ボタンをクリックしたとき
-      $('#btn').click(function(e) {
-            e.preventDefault();
-        
-        // ボタンを押して5秒後に結果ページへ遷移
-        var TransitionDelay = function(){
-            window.location.href = 'https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2';
-        }
-        setTimeout ( TransitionDelay, 3000 );
-      });
-    });
-    </script>
-
-<script>
-function checkPassword() {
-  var password = document.getElementById("password").value;
-  if (password == "kasa") {
-    location.href = "https://sakazukiaoi.github.io/TMC./home.html";
-  } else {
-  }
-}
-</script>
-
-
-<body>
-  <input type="password" id="password">
-  <button id="btn" onclick="checkPassword()">check</button>
-</body>
-<h3 id="text"></h3>
-
-<script>
-    // btnというidを持つHTML要素を取得し、定数に代入する
-const btn = document.getElementById('btn');
-
-// textというidを持つHTML要素を取得し、定数に代入する
-const text = document.getElementById('text');
-
-// HTML要素がクリックされたときにイベント処理を実行する
-btn.addEventListener('click', () => {
-    text.textContent    = "Connect to another site."; 
-
-
-});
-<script>
-function checkPassword() {
-  var password = document.getElementById("password").value;
-  if (password == "kasa") {
-    location.href = "https://sakazukiaoi.github.io/TMC./home.html";
-  } else if (password == "HIC_SHI") {
-    location.href = "https://sakazukiaoi.github.io/TMC./hello.html"; // ← ここを遷移先に変更してください
-  } else {
-    alert("パスワードが間違っています。");
-  }
-}
-</script>
-
-</script>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
+<body>
+    <div class="window" style="width: 40%;">
+        <div class="window-body">
+            <p>What's your name?</p>
 
+            <input type="password" id="password">
+            <button id="btn" onclick="checkPassword()">Check</button>
+            <h3 id="text"></h3>
 
-</div>
-</div>
+            <script type="text/javascript">
+                // Function to handle password checking and redirection
+                function checkPassword() {
+                    var password = document.getElementById("password").value;
+
+                    if (password === "kasa") {
+                        location.href = "https://sakazukiaoi.github.io/TMC./home.html";
+                    } else if (password === "HIC_SHI") {
+                        location.href = "https://sakazukiaoi.github.io/TMC./hello.html";
+                    } else {
+                        alert("Password incorrect.");
+                    }
+                }
+
+                // jQuery for the delayed redirection (if needed after password check)
+                $(function() {
+                    $('#btn').click(function(e) {
+                        e.preventDefault(); // Prevent default button behavior
+                        // No longer need the 3-second delay here if checkPassword handles immediate redirection
+                        // If you still want a delay *after* successful password, you'd integrate it into checkPassword.
+                    });
+                });
+
+                // Script to update text content when button is clicked
+                const btn = document.getElementById('btn');
+                const text = document.getElementById('text');
+
+                btn.addEventListener('click', () => {
+                    text.textContent = "Connect to another site.";
+                });
+            </script>
+        </div>
+    </div>
+</body>
 </html>
