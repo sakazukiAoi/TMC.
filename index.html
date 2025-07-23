@@ -54,6 +54,18 @@ btn.addEventListener('click', () => {
 
 
 });
+<script>
+function checkPassword() {
+  var password = document.getElementById("password").value;
+  if (password == "kasa") {
+    location.href = "https://sakazukiaoi.github.io/TMC./home.html";
+  } else if (password == "HIC_SHI") {
+    location.href = "https://sakazukiaoi.github.io/TMC./hello.html"; // ← ここを遷移先に変更してください
+  } else {
+    alert("パスワードが間違っています。");
+  }
+}
+</script>
 
 </script>
 </head>
