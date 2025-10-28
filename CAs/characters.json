@@ -1,0 +1,476 @@
+[
+    {
+        "id": 1,
+        "name": "阿多田　夕立",
+        "kana": "アタダユウダチ",
+        "url": "https://iachara.com/view/5326663",
+        "portraitPath": "CAs/portraits/adata_yuudachi.png",
+        "type": "CoC",
+        "basic": ["168", "女", "7/13", "21", "４大２"],
+        "stats": ["8", "17", "15", "15", "10", "14", "14", "13"],
+        "profile": [
+            "バンド:イグナイト所属",
+            "音楽が生命線　命の歌",
+            "特技 鼻歌",
+            "所持金:34386円",
+            "ベースをしている作曲者",
+            "高校の時はギターをしていたけれど、ベースの重低音に惚れてしまい、勢いでベースを買ってしまった。",
+            "もちろんボーカルは歌愛ユキ。(かわいい)"
+        ],
+        "sections": [
+            { "title": "持ち物", "content": ["特になし"] },
+            { "title": "通過済シナリオ", "content": ["ワンルームディスコン", "SHOTGUN KIXXING MARRIAGE", "誰がロックを殺すのか"] },
+            {
+                "title": "関係者",
+                "content": [
+                    "奈良　　心<img src=\"CAs/buttoniconimg/3.svg\"　width=\"32px\" height=\"32px\"　>",
+                    "日輪　　奏　/イグナイト",
+                    "間古部　翼　/  〃",
+                    "轟　　　雷亜/  〃"
+                ]
+            }
+        ],
+        "altText": "阿多田 夕立"
+    },
+    {
+        "id": 2,
+        "name": "箕眞　句々類",
+        "kana": "ミマ　ククル",
+        "url": "https://emoklore.charasheet.jp/view/324291",
+        "portraitPath": "CAs/portraits/mima_kukuru.png",
+        "type": "エモクロア",
+        "basic": ["154", "女", "??", "17", "高校２"],
+        "stats": ["2", "1", "5", "4", "4", "3", "4", "3"],
+        "profile": ["小説の編集者を目指す高校生"],
+        "sections": [
+            { "title": "持ち物", "content": ["とくになし"] },
+            { "title": "通過済シナリオ", "content": ["変葬"] },
+            { "title": "関係者", "content": ["三輪田　花奈 /クラスメイト　友人"] }
+        ],
+        "altText": "箕眞 句々類"
+    },
+    {
+        "id": 3,
+        "name": "奈良　　心",
+        "kana": "ナラ　ココロ",
+        "url": "https://iachara.com/view/5512258",
+        "portraitPath": "CAs/portraits/nara_kokoro.png",
+        "type": "CoC",
+        "basic": ["158", "女", "6/22", "15", "中学1"],
+        "stats": ["11", "11", "15", "13", "11", "15", "15", "11"],
+        "profile": ["純粋で元気な健全中学1年生"],
+        "sections": [
+            { "title": "持ち物", "content": ["とくになし"] },
+            { "title": "通過済シナリオ", "content": ["毒入りスープ", "ハートフルワンダーランド", "俺の注文したｵﾑﾗｲｽが動いてるんだが"] },
+            { "title": "関係者", "content": ["阿多田　夕立<img src=\"CAs/buttoniconimg/1.svg\"　width=\"32px\" height=\"32px\"　>/従妹"] }
+        ],
+        "altText": "奈良 心"
+    },
+    {
+        "id": 4,
+        "name": "優",
+        "kana": "ユウ",
+        "url": "https://iachara.com/view/5519284",
+        "portraitPath": "CAs/portraits/4_yu.png",
+        "type": "CoC",
+        "basic": ["158", "女", "12/2", "21", "４大２"],
+        "stats": ["10", "6", "13", "12", "17", "8", "14", "12"],
+        "profile": [
+            "月村優　月村彼方の死亡により無口な性格のまま大学生になった。寡黙で根暗な性格は未だ親友である谷野にも心を開いていない。",
+            "味覚や痛覚などが感じないと本人は自覚しているが、実際のところは神経の異常ではなく、認識の問題である。"
+        ],
+        "sections": [
+            { "title": "持ち物", "content": ["とくになし", ""] },
+            { "title": "通過済シナリオ", "content": ["キルキルイキル"] },
+            {
+                "title": "関係者",
+                "content": ["谷野　有栖<img src=\"CAs/buttoniconimg/4-1.svg\"　width=\"32px\" height=\"32px\"　>/親友", "月村　彼方/兄"]
+            }
+        ],
+        "altText": "優"
+    },
+    {
+        "id": 5,
+        "name": "芒星 クロネ",
+        "kana": "ボウセイクロネ",
+        "url": "https://iachara.com/view/5588137",
+        "portraitPath": "CAs/portraits/5_bousei.png",
+        "type": "CoC",
+        "basic": ["153", "女", "10/20", "??", "??"],
+        "stats": ["7", "8", "13", "17", "17", "9", "12", "14"],
+        "profile": [
+            "電子機器に強い",
+            "衣服の製作が得意(というか本業)"
+        ],
+        "sections": [
+            { "title": "その他MEMO", "content": ["本名:汐見　悠季(シオミ　ユウキ)　恋人(女性)がいる。", "バカくそかわいい顔をしているが、思ったより年を取っている、ツンデレ"] },
+            { "title": "通過済シナリオ", "content": ["かいぶつたちとマホラカルト"] },
+            {
+                "title": "関係者",
+                "content": ["かいまほ<img src=\"CAs/buttoniconimg/3.svg\"　width=\"32px\" height=\"32px\"　>", "かいまほ/かいまほ", "かいまほ/かいまほ", "かいまほ/かいまほ", "かいまほ/恋人", "汐見美津/親戚"]
+            }
+        ],
+        "altText": "芒星 クロネ"
+    },
+    {
+        "id": 6,
+        "name": "幸村　優",
+        "kana": "ユキムラ　ユウ",
+        "url": "https://iachara.com/view/5519284",
+        "portraitPath": "CAs/portraits/6_yukimura.png",
+        "type": "CoC",
+        "basic": ["158", "女", "12/2", "21", "４大２"],
+        "stats": ["10", "6", "13", "12", "17", "8", "14", "12"],
+        "profile": ["優<img src=\"CAs/buttoniconimg/4.svg\"　width=\"32px\" height=\"32px\"　>から派生したアンドロイド", "肉体を手にして本物の優のようにふるまっている(自覚はない)"],
+        "sections": [
+            { "title": "持ち物", "content": ["とくになし", ""] },
+            { "title": "通過済シナリオ", "content": ["心臓がちょっとはやく動くだけ", "呼吸ごっこ"] },
+            {
+                "title": "関係者",
+                "content": ["谷野　有栖<img src=\"CAs/buttoniconimg/6-1.svg\"　width=\"32px\" height=\"32px\"　>/親友", "月村　優<img src=\"CAs/buttoniconimg/4.svg\"　width=\"32px\" height=\"32px\"　>/原型", "月村　彼方/兄"]
+            }
+        ],
+        "altText": "幸村 優"
+    },
+    {
+        "id": 7,
+        "name": "花韮　想沙",
+        "kana": "ハナニラ　ソウサ",
+        "url": "https://iachara.com/view/5612818",
+        "portraitPath": "CAs/portraits/7_hananira.png",
+        "type": "CoC",
+        "basic": ["132", "男", "3/30", "20", "--"],
+        "stats": ["12", "15", "13", "15", "13", "6", "12", "18"],
+        "profile": ["病弱華奢"],
+        "sections": [
+            { "title": "持ち物", "content": ["22口径ショート・オートマチック(拾った)(芒星クロネがかいまほ解散後に捨てたもの)"] },
+            { "title": "通過済シナリオ", "content": ["GoodMorningAll", "のこり2分", "問、死の定義を教えてください"] },
+            {
+                "title": "関係者",
+                "content": ["瑠璃　/友人<img src=\"CAs/buttoniconimg/3.svg\"　width=\"32px\" height=\"32px\"　>", "茅柳　仁/友人", "汐見　悟/友人", "緑川　羽譜/クラスメイト", "花韮　賢治/父親", "花韮　侑花/母親"]
+            }
+        ],
+        "altText": "花韮 想沙"
+    },
+    {
+        "id": 8,
+        "name": "廻詩達　糾",
+        "kana": "ミシダ　レイ",
+        "url": "https://iachara.com/view/5769316",
+        "portraitPath": "CAs/portraits/8_mishida.png",
+        "type": "CoC",
+        "basic": ["153", "女", "3/10", "26", "国語教師"],
+        "stats": ["12", "15", "16", "12", "7", "9", "14", "16"],
+        "profile": ["仏血霧我丘中学校の国語の教師"],
+        "sections": [
+            { "title": "持ち物", "content": ["", ""] },
+            { "title": "通過済シナリオ", "content": ["ソープスクール"] },
+            {
+                "title": "関係者",
+                "content": ["悠木　正人/ソープスクール", "芥　　十月/  〃", "獅子薪走雪/  〃"]
+            }
+        ],
+        "altText": "廻詩達 糾"
+    },
+    {
+        "id": 9,
+        "name": "早乙女　語",
+        "kana": "サオトメ　カタル",
+        "url": "https://iachara.com/view/5924757",
+        "portraitPath": "CAs/portraits/9_saotome.png",
+        "type": "CoC",
+        "basic": ["168", "男", "5/8", "16", "高校2"],
+        "stats": ["12", "11", "10", "6", "11", "14", "17", "17"],
+        "profile": ["シーレンスから迷い込んだ者ヴィルグ出身"],
+        "sections": [
+            { "title": "持ち物", "content": ["", ""] },
+            { "title": "通過済シナリオ", "content": ["死にたがり電車"] },
+            {
+                "title": "関係者",
+                "content": ["二矢桁　香緒/その辺で遭遇した", "雪夏　　　　/〃", "花韮　　想沙/知人"]
+            }
+        ],
+        "altText": "早乙女 語"
+    },
+    {
+        "id": 10,
+        "name": "枸累　藍",
+        "kana": "クルイ　アイ",
+        "url": "https://iachara.com/view/6563593",
+        "portraitPath": "CAs/portraits/10_kurui.png",
+        "type": "CoC",
+        "basic": ["163", "女", "3/24", "17", "高校2"],
+        "stats": ["10", "9", "11", "11", "13", "13", "12", "14"],
+        "profile": ["くーちゃんというぬいぐるみを常に持ち歩いている", "大量生産が得意"],
+        "sections": [
+            { "title": "持ち物", "content": ["", ""] },
+            { "title": "通過済シナリオ", "content": ["ジャンクパーツフルセション！"] },
+            {
+                "title": "関係者",
+                "content": ["窮鼠　　現　/私立柴咲高等学校工業科", "芽茶　　万福/  〃", "寛那岐　輝　/  〃"]
+            }
+        ],
+        "altText": "枸累 藍"
+    },
+    {
+        "id": 11,
+        "name": "山上 蘭希",
+        "kana": "マヤガミ　ラキ",
+        "url": "https://iachara.com/view/6155840",
+        "portraitPath": "CAs/portraits/11_mayagami.png",
+        "type": "CoC",
+        "basic": ["164", "男", "--", "17", "高校2"],
+        "stats": ["10", "12", "12", "7", "18", "11", "14", "12"],
+        "profile": ["芸術的駄作は黙ってろ"],
+        "sections": [
+            { "title": "持ち物", "content": ["", ""] },
+            { "title": "通過済シナリオ", "content": ["星の吸血鬼にさようならを"] },
+            {
+                "title": "関係者",
+                "content": ["秋元　星矢/星の吸血鬼にさようならを"]
+            }
+        ],
+        "altText": "山上 蘭希"
+    },
+    {
+        "id": 12,
+        "name": "月村　彼方",
+        "kana": "ツキムラ　カナタ",
+        "url": "https://iachara.com/view/5519284",
+        "portraitPath": "CAs/portraits/12_tsukimura.png",
+        "type": "CoC",
+        "basic": ["173", "男", "11/8", "28", "特殊清掃員"],
+        "stats": ["15", "7", "13", "14", "10", "14", "11", "15"],
+        "profile": ["■■■を見つけることはなかった。誰もが生きている。・・・俺は？"],
+        "sections": [
+            { "title": "持ち物", "content": ["とくになし", ""] },
+            { "title": "通過済シナリオ", "content": ["オルターエゴ"] },
+            {
+                "title": "関係者",
+                "content": ["月村　優<img src=\"CAs/buttoniconimg/4.svg\"　width=\"32px\" height=\"32px\"　>/妹", "谷野　有栖<img src=\"CAs/buttoniconimg/4-1.svg\"　width=\"32px\" height=\"32px\"　>/親友", "芥　　十月/友人"]
+            }
+        ],
+        "altText": "月村 彼方"
+    },
+    {
+        "id": 13,
+        "name": "宇都　キソ",
+        "kana": "ウツ　キソ",
+        "url": "https://iachara.com/view/5769316",
+        "portraitPath": "CAs/portraits/13_utsu.png",
+        "type": "CoC",
+        "basic": ["161", "女", "4/25", "23", "写真家"],
+        "stats": ["11", "7", "10", "11", "11", "13", "13", "16"],
+        "profile": ["※三つ編み→メロウ　※ノーマル→宇都メロ"],
+        "sections": [
+            { "title": "持ち物", "content": ["", ""] },
+            { "title": "通過済シナリオ", "content": ["Zai"] },
+            { "title": "関係者", "content": ["彼方　憂太/恋人"] }
+        ],
+        "altText": "宇都 キソ"
+    },
+    {
+        "id": 14,
+        "name": "mellow",
+        "kana": "メロウ",
+        "url": "https://iachara.com/view/6980746",
+        "portraitPath": "CAs/portraits/14_mellow.png",
+        "type": "CoC",
+        "basic": ["150", "--", "--", "--", "放浪者"],
+        "stats": ["17", "13", "18", "11", "10", "11", "9", "18"],
+        "profile": ["誰よりも幸せを願う悪役"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["Zai"] },
+            { "title": "関係者", "content": ["彼方　憂太/Zai", "宇都　キソ/〃"] }
+        ],
+        "altText": "mellow"
+    },
+    {
+        "id": 15,
+        "name": "玖波　小豆",
+        "kana": "クバ　アズキ",
+        "url": "https://iachara.com/view/6869656",
+        "portraitPath": "CAs/portraits/15_kuba.png",
+        "type": "CoC",
+        "basic": ["142", "女", "8/24", "19", "なし"],
+        "stats": ["18", "21", "7", "12", "12", "13", "8", "16"],
+        "profile": ["超絶ドジ天然バカ"],
+        "sections": [
+            { "title": "持ち物", "content": ["草刈り用の鎌"] },
+            { "title": "通過済シナリオ", "content": ["From madness to dear monsters"] },
+            { "title": "関係者", "content": ["アオ/まどもんKPC"] }
+        ],
+        "altText": "玖波 小豆"
+    },
+    {
+        "id": 16,
+        "name": "西麻植　蛙",
+        "kana": "ニシオエ　カワズ",
+        "url": "https://iachara.com/view/7733558",
+        "portraitPath": "CAs/portraits/16_nishioe.png",
+        "type": "CoC",
+        "basic": ["155", "女", "11/16", "13", "中学1"],
+        "stats": ["8", "13", "14", "13", "7", "11", "10", "7"],
+        "profile": ["シスコン　バカ"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["「」なんてね"] },
+            { "title": "関係者", "content": ["西麻植　彼尾/姉"] }
+        ],
+        "altText": "西麻植 蛙"
+    },
+    {
+        "id": 17,
+        "name": "∷ 宵華　加瀬木 ∷",
+        "kana": "ヨイハル　カゼギ",
+        "url": "https://iachara.com/view/6924663",
+        "portraitPath": "CAs/portraits/17_yoiharu.png",
+        "type": "CoC",
+        "basic": ["160", "女", "5/1", "18", "高校3"],
+        "stats": ["13", "10", "10", "11", "10", "12", "14", "13"],
+        "profile": ["哀　愛"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["凕々に生きましょう"] },
+            { "title": "関係者", "content": ["トワ/溟々に生きましょう"] }
+        ],
+        "altText": "宵華 加瀬木"
+    },
+    {
+        "id": 18,
+        "name": "黒井　飴",
+        "kana": "クロイ　アメ",
+        "url": "https://iachara.com/view/6493497",
+        "portraitPath": "CAs/portraits/18_kuroi.png",
+        "type": "CoC",
+        "basic": ["165", "女", "6/24", "32", "刑事"],
+        "stats": ["11", "12", "14", "10", "14", "12", "18", "14"],
+        "profile": ["一番まともな人"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["庭師は何を口遊ぶ"] },
+            { "title": "関係者", "content": ["　　　　　　　/姉", "永倉　　　霊　/ゼロ課", "詩思十師　都斗/〃", "春川　　　冬馬/〃"] }
+        ],
+        "altText": "黒井 飴"
+    },
+    {
+        "id": 19,
+        "name": "青蓮華　附子",
+        "kana": "ショウレンゲ　フシ",
+        "url": "https://iachara.com/view/6333334",
+        "portraitPath": "CAs/portraits/19_shourenge.png",
+        "type": "CoC",
+        "basic": ["144", "女", "5/25", "18", "高校3"],
+        "stats": ["12", "11", "10", "16", "11", "8", "14", "13"],
+        "profile": ["ブス　毒　不死身"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["灰と甘露"] },
+            { "title": "関係者", "content": ["青蓮華　紅翅/保護者"] }
+        ],
+        "altText": "青蓮華 附子"
+    },
+    {
+        "id": 20,
+        "name": "Noah Aldrich",
+        "kana": "ノア・アルドリッチ",
+        "url": "https://iachara.com/view/6051172",
+        "portraitPath": "CAs/portraits/20_noah.png",
+        "type": "CoC",
+        "basic": ["182", "男", "2/1", "34", "検視官"],
+        "stats": ["14", "12", "15", "10", "9", "15", "10", "17"],
+        "profile": ["シーレンスよりコンバート"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["嗤う人間師"] },
+            { "title": "関係者", "content": ["マム/妻", "マイハニー/娘", "MARY DE HOWARD/同僚", "BLACK OLIVER/〃", "LUNA CLRK/〃"] }
+        ],
+        "altText": "Noah Aldrich"
+    },
+    {
+        "id": 21,
+        "name": "汐見　美津",
+        "kana": "シオミ　ミツ",
+        "url": "https://iachara.com/view/6869721",
+        "portraitPath": "CAs/portraits/21_shiomi.png",
+        "type": "CoC",
+        "basic": ["178", "女", "7/20", "27", "ミステリー作家"],
+        "stats": ["12", "6", "13", "12", "18", "14", "10", "15"],
+        "profile": ["笑顔な時ほど嘘くさい","絶対に本心じゃない(零奈)"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["海も枯れるまで", "ホロウハロウスリーピング"] },
+            { "title": "関係者", "content": ["海瀬　夏生/友人", "汐見　零奈/従妹", "汐見　悟　/従妹", "葉月　秋　/友人", "不気味な少女/幻覚", "□□　□□/使用人"] }
+        ],
+        "altText": "汐見 美津"
+    },
+    {
+        "id": 22,
+        "name": "john",
+        "kana": "ジョン",
+        "url": "https://iachara.com/view/8285787",
+        "portraitPath": "CAs/portraits/22_robert.png",
+        "type": "CoC",
+        "basic": ["148", "男", "7/19", "17", "原初のアルカナ"],
+        "stats": ["15", "8", "16", "15", "11", "16", "13", "12"],
+        "profile": ["元気ハツラツ　月村彼方からのコンバート"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["GODARCA"] },
+            { "title": "関係者", "content": [""] }
+        ],
+        "altText": "john"
+    },
+    {
+        "id": 23,
+        "name": "Sextilis Custokey",
+        "kana": "スティリス　クストーキー",
+        "url": "https://iachara.com/view/9541399",
+        "portraitPath": "CAs/portraits/23_sextilis.png",
+        "type": "CoC",
+        "basic": ["172", "女", "2/10", "23", "原初のアルカナ"],
+        "stats": ["11", "10", "16", "14", "10", "16", "12", "8"],
+        "profile": ["照れ屋"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["GODARCA"] },
+            { "title": "関係者", "content": [""] }
+        ],
+        "altText": "Sextilis Custokey"
+    },
+{
+        "id": 24,
+        "name": "月村　優",
+        "kana": "ツキムラ　ユウ",
+        "url": "https://iachara.com/view/9842451",
+        "portraitPath": "CAs/portraits/24_tsukimura.png",
+        "type": "CoC",
+        "basic": ["159", "女", "12/2", "21", "4大2"],
+        "stats": ["11", "7", "13", "13", "17", "12", "15", "11"],
+        "profile": ["何一つ事件にかかわることのなかった世界線。誰よりも幸せに。"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["やさしい世界と呼吸法"] },
+            { "title": "関係者", "content": ["谷野　有栖/親友", "月村　彼方/兄"] }
+        ],
+        "altText": "月村 優"
+    },
+{
+        "id": 25,
+        "name": "水溺",
+        "kana": "スイミン",
+        "url": "",
+        "portraitPath": "CAs/portraits/24_tsukimura.png",
+        "type": "CoC",
+        "basic": [],
+        "stats": [],
+        "profile": ["溺水しかけたことが由来"],
+        "sections": [
+            { "title": "持ち物", "content": [""] },
+            { "title": "通過済シナリオ", "content": ["渡る世間は殺人鬼ばかり"] },
+            { "title": "関係者", "content": [] }
+        ],
+        "altText": "水溺"
+    }
+]
