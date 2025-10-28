@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-
   <head>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script> -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script> -->
-                <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>   
   </head>
 <head>
+   <meta charset="utf-8"/>
    <title>TMC</title>
-   <link rel="stylesheet" href="css/leftNavigation.css">
-     <link rel="icon" href="favicon.ico">
+   <link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 </head>
-
 <body>
-    <header class="leftNavigation">
-      <p><a href="home" aria-label="Current Page: HOME">HOME</a></p>
-      <hr size="5">
-       <p><font face="serif">DATA</font></p>
-       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
-       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
-       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
-       <hr size="5">
-       <p><font face="serif">LYNC</font></p>
-       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
-       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
-       <p><font face="serif"><a href="sakazukiaoi.github.io/sisaku0017/"aria-label="Current Page: AOCB">AOCB</a></font></p>
+      <header class="leftNavigation">
+    <div id="cover"></div>
+    <script>
+ $(function(){
+ $("#cover").load("header.html");
+        });
+    </script>
     </header>
-
-
+<!--main-->
     <div class="content2">
 <p>探索者すぐ死ぬ</p>
 <p>ワンルーム・ディスコン</p>
@@ -84,8 +72,6 @@
 -->
 </div>
 
-  
-</body>
 <div class="content3">
 <p>*</p>
 <p>/02/11</p>
@@ -128,7 +114,6 @@
 <p></p>
 </div>
 
-  
 <div class="content4">
 <p>&emsp;&emsp;&emsp;のんSE</p>
 <p>PC3&emsp;阿多田　夕立</p>
@@ -178,5 +163,6 @@
 <p></p>
 -->
     </div>
-
+<!--/main-->
+</body>
 </html>
