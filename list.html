@@ -1,226 +1,359 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css" >
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-<title>TMC</title>
-<script>
-$(function(){
-  $("#cover").load("header.html");
-});
-</script>
-  <style type="text/css">
-
-.karte-temp-text a:link { color: #000000; }
-.karte-temp-text a:visited { color: #000000; }
-.karte-temp-text a:hover { color: #0000ff; }
-.karte-temp-text a:active { color: #000000; }
-  
-    </style>
-  <style>
-            td {
-           white-space: nowrap;
-        }
-            h1 {
-            text-align: center;
-        }
-        h2 {
-            text-align: center;
-        }
-          /* プラス記号のボタン */
-          .toggleTextBtn {
-              font-size: 12px; 
-          }
-          /* 枠付きテキスト */
-          .text-box {
-            display: none; /* 初期状態は非表示 */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TMC</title>
+    <link rel="icon" href="favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    
+    <style>
+        html, body {
+    overflow-x: hidden;
+        overflow-y: hidden;
+}
+        /* リンクのスタイル */
+        .karte-temp-text a:link    { color: #000000; }
+        .karte-temp-text a:visited { color: #000000; }
+        .karte-temp-text a:hover   { color: #0000ff; }
+        .karte-temp-text a:active  { color: #000000; }
+        
+        /* 基本的な要素のスタイル */
+        td { white-space: nowrap; }
+        h1, h2 { text-align: center; } 
+        
+        /* トグルボタン（プラス記号のボタン）のスタイル */
+        .toggleTextBtn { font-size: 12px; }
+        
+        /* 枠付きテキスト (追加情報) */
+        .text-box {
+            display: none; 
             border: 2px solid #000;
             padding: 15px;
             margin-top: 10px;
             background-color: #f9f9f9;
             position: relative;
             max-width: 900px;
-          }
-          .tet-box {
+        }
+        
+        /* プロフィール用テキストボックスのスタイル */
+        .tet-box {
             padding: 10px;
-            margin-left: 20px;
+            margin-left: 20px; 
             margin-bottom: 10px;
             border: 1px dotted #333333;
-            max-width: 500;
-          }
-        </style>
+            max-width: 500px; 
+        }
 
-
-<link rel="icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <header class="leftNavigation">
-      <p><a href="home.html" aria-label="Current Page: HOME">HOME</a></p>
-      <hr size="5">
-       <p><font face="serif">DATA</font></p>
-       <p><font face="serif"><a href="list.html" aria-label="Current Page: list">LIST</a></font></p>
-       <p><font face="serif"><a href="hayami.html" aria-label="Current Page: hayami">HAYAMI</a></font></p>
-       <p><font face="serif"><a href="scenario.html" aria-label="Current Page: scenario">SCENARIO</a></font></p>
-       <hr size="5">
-       <p><font face="serif">LYNC</font></p>
-       <p><font face="serif"><a href="https://fusetter.com/u/Hic_shi"aria-label="Current Page: HUSETTA">HUSETTA</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/7664889/"aria-label="Current Page: POIPIKU:1">POIPIKU:1</a></font></p>
-       <p><font face="serif"><a href="https://poipiku.com/8567656/"aria-label="Current Page: POIPIKU:2">POIPIKU:2</a></font></p>
-       <p><font face="serif"><a href="https://profcard.info/u/DXHWUvDzl5NypHkYgz43AnzzdYb2"aria-label="Current Page: PROFILE">PROFILE</a></font></p> 
-       <p><font face="serif"><a href="https://sakazukiaoi.github.io/sisaku0017/"aria-label="Current Page: AOCB">AOCB</a></font></p>
-    </header>
-<style>
+        /* メインコンテナのレイアウト */
         .container {
             display: flex;
             width: 90%;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
-        .button-panel {
-            display: flex;
-            flex-direction: column;
-        }
+        /* ボタンパネル（画像バナー群）のスタイル */
+.button-panel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2px;
+    margin-right: 15px;
+    max-height: 100vh;          /* 高さを制限して縦スクロール可能に */
+    overflow-y: auto;          /* 縦スクロール許可 */
+    overflow-x: hidden;        /* 横スクロール禁止 */
+    border-right: 1px solid #ccc;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
 
-        .button-panel button {
-            margin-bottom: 0.2px;
-            text-align: left;
-            padding: 10px;
-            padding-left: 11%;
-            font-size: 16px;
-            white-space: pre ;
-        }
+        /* 画像バナーのスタイル */
+.button-panel img {
+    width: 70px;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: block;
+}
 
-        .content-panel {
-            border: 1px solid #ccc;
-            padding: 20px;
-            width: 100%;
-        }
-    </style>
-</head>
-    <script>
-    // すべてのプラスボタンにイベントリスナーを追加
-    document.querySelectorAll('.toggleTextBtn').forEach(button => {
-      button.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-target');  // ボタンのdata-target属性からターゲットIDを取得
-        const textBox = document.getElementById(targetId);  // 対応するテキストボックスを取得
-
-        // テキストボックスの表示/非表示を切り替え
-        if (textBox.style.display === 'block') {
-          textBox.style.display = 'none';
-          this.textContent = '+'; // ボタンの表示を「+」に戻す
-        } else {
-          textBox.style.display = 'block';
-          this.textContent = '−'; // ボタンの表示を「−」に変更
-        }
-      });
-    });
-  </script>
-<body>
-
-  <!--いったん消し
-        <button onclick="loadContent('CAs/No20.html')">葉月　　　秋</button>
-        <button onclick="loadContent('CAs/No21.html')">スミレ</button>
-        <button onclick="loadContent('CAs/No23.html')">古灯　　　朝</button>
--->
-
-
-
-    <style>
-        .container {
-            display: flex;
-        }
-
-        .button-panel {
-            display: flex;
-            flex-direction: column;
-            margin-right: 20px;
-        }
-
-        /* 画像をバナー風に調整 */
-        .button-panel img {
-            margin-bottom: 10px; /* 画像間のスペース */
-            width: 150px; /* バナーの幅を指定 */
-            cursor: pointer; /* クリックできるように */
-            border: 2px solid transparent; /* 枠線を透明にしておく */
-        }
-
-        /* ホバー時に枠線の色を変える */
+        /* 画像バナーのホバーエフェクト */
         .button-panel img:hover {
             border-color: #333;
         }
+        
+        /* コンテンツ表示パネルのスタイル */
+.content-panel {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
+        max-height: 100vh;          /* 高さを制限して縦スクロール可能に */
+    overflow-y: auto;          /* 縦スクロール許可 */
+    overflow-x: hidden;        /* 横スクロール禁止 */
+                margin-bottom: 100vh;
+}
+.content-panel table {
+    margin-left: 0;
+    margin-right: auto;  /* 左寄せ */
+    border-collapse: collapse;
+}
 
-        .content-panel {
+.content-panel table td {
+    text-align: center;
+    padding: 5px;
+}
+        /* 立ち絵と情報エリアを分けるFlexboxコンテナ */
+        .character-header-container {
+            display: flex;
+            gap: 30px; 
+            align-items: flex-start; 
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee; 
+        }
+
+        /* 立ち絵エリア */
+        .portrait-area {
+            width: 200px; 
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .portrait-area img {
+            max-width: 100%;
+            height: auto;
             border: 1px solid #ccc;
-            padding: 20px;
-            width: 100%;
+        }
+
+        /* 情報エリア */
+        .info-area {
+            flex-grow: 1;
+            text-align: left; 
+        }
+
+        /* 情報エリア内のHタグは左揃えにする */
+        .info-area h1, .info-area h2, .info-area h3 {
+            text-align: left;
+        }
+        
+        /* 情報エリア内のプロフィールボックスの左マージンを解除し、左に詰める */
+        .info-area .tet-box {
+            margin-left: 0; 
+            max-width: none;
         }
     </style>
 </head>
 <body>
+    <header class="leftNavigation">
+    <div id="cover"></div>
+    </header>
+    <script>
+        $(function(){
+            $("#cover").load("header.html");
+        });
+    </script>
+    <!--main-->
+    <div class="container">
+        <div class="button-panel" id="button-list">
+            <div id="page_top"></div>
+        </div>
 
-<div class="container">
-    <div class="button-panel">
-        <!-- 画像を使ったバナー風のボタン --><div id="page_top">
-        <img src="CAs/buttoniconimg/1.png"  alt="A" onclick="loadContent('CAs/No1.html')" >　</div>
-        <a href="#page_top"><img src="CAs/buttoniconimg/2.png"  alt="A" onclick="loadContent('CAs/No2.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/3.png"  alt="A" onclick="loadContent('CAs/No3.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/4.png"  alt="A" onclick="loadContent('CAs/No4.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/5.png"  alt="A" onclick="loadContent('CAs/No5.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/6.png"  alt="A" onclick="loadContent('CAs/No6.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/7.png"  alt="A" onclick="loadContent('CAs/No7.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/8.png"  alt="A" onclick="loadContent('CAs/No8.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/9.png"  alt="A" onclick="loadContent('CAs/No9.html')" ></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/10.png" alt="A" onclick="loadContent('CAs/No10.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/11.png" alt="A" onclick="loadContent('CAs/No11.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/12.png" alt="A" onclick="loadContent('CAs/No12.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/13.png" alt="A" onclick="loadContent('CAs/No13.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/14.png" alt="A" onclick="loadContent('CAs/No14.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/15.png" alt="A" onclick="loadContent('CAs/No15.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/16.png" alt="A" onclick="loadContent('CAs/No16.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/17.png" alt="A" onclick="loadContent('CAs/No17.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/18.png" alt="A" onclick="loadContent('CAs/No18.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/19.png" alt="A" onclick="loadContent('CAs/No19.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/20.png" alt="A" onclick="loadContent('CAs/No20.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/21.png" alt="A" onclick="loadContent('CAs/No21.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/22.png" alt="A" onclick="loadContent('CAs/No22.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/23.png" alt="A" onclick="loadContent('CAs/No23.html')"></a>
-        <a href="#page_top"><img src="CAs/buttoniconimg/24.png" alt="A" onclick="loadContent('CAs/No24.html')"></a>
-<!--    <a href="#page_top"><img src="CAs/buttoniconimg/25.png" alt="A" onclick="loadContent('CAs/No25.html')"></a>-->
+        <div class="content-panel" id="content-panel">
+            <p>NO SELECT</p>
+        </div>
     </div>
-    <div class="content-panel" id="content-panel">
-        <p>NO SELECT</p>
-    </div>
-</div>
+    <script>
 
-<script>
-    function loadContent(filename) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', filename, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var contentPanel = document.getElementById('content-panel');
-                contentPanel.innerHTML = xhr.responseText;
+        // ------------------------------------
+        // データと定数
+        // ------------------------------------
+        
+        // データを格納するグローバル変数 (letに変更)
+        let characterData = []; 
 
-                var scripts = contentPanel.getElementsByTagName('script');
-                for (var i = 0; i < scripts.length; i++) {
-                    if (scripts[i].src) {
-                        var script = document.createElement('script');
-                        script.src = scripts[i].src;
-                        document.body.appendChild(script);
-                    } else {
-                        var script = document.createElement('script');
-                        script.text = scripts[i].text;
-                        document.body.appendChild(script);
-                    }
-                }
-            }
+        const STAT_HEADERS = {
+            "CoC": ["STR", "CON", "POW", "DEX", "APP", "SIZ", "INT", "EDU"],
+            "エモクロア": ["身体", "器用", "精神", "五感", "知力", "魅力", "社会", "運勢"]
         };
-        xhr.send();
-    }
-</script>
+        const BASIC_HEADERS = ["身長", "性別", "誕生日", "年齢", "職業"];
 
+        // ------------------------------------
+        // 関数定義
+        // ------------------------------------
+
+        function setupToggleButtons() {
+            document.querySelectorAll('.toggleTextBtn').forEach(button => {
+                button.onclick = null; 
+                
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const textBox = document.getElementById(targetId);
+
+                    if (textBox) {
+                        if (textBox.style.display === 'block') {
+                            textBox.style.display = 'none';
+                            this.textContent = '+';
+                        } else {
+                            textBox.style.display = 'block';
+                            this.textContent = '−';
+                        }
+                    }
+                });
+            });
+        }
+
+        function createToggleSections(char) {
+            let sectionsHTML = '';
+            
+            char.sections.forEach((section, index) => {
+                const targetId = `textBox_${char.id}_${index}`; 
+                const contentP = section.content.map(p => `<p>${p}</p>`).join('');
+
+                sectionsHTML += `
+                    <div>
+                        <button class="toggleTextBtn" data-target="${targetId}">+</button>　${section.title}
+                        <div id="${targetId}" class="text-box">
+                            ${contentP}
+                        </div>
+                    </div>
+                `;
+            });
+            return sectionsHTML;
+        }
+
+        // キャラクターコンテンツ全体を生成・挿入する関数
+        function generateCharacterContent(charId) {
+            const char = characterData.find(c => c.id === charId);
+            const contentPanel = document.getElementById('content-panel');
+            
+            if (!char) {
+                contentPanel.innerHTML = '<p>指定されたキャラクターデータが見つかりません。</p>';
+                return;
+            }
+            
+            // --- A. 能力値テーブルのHTMLを生成 ---
+            const statHeaders = STAT_HEADERS[char.type];
+            const tableHTML = `
+                <table align="center" border="1">
+                    <tr align="center">
+                        <td>${BASIC_HEADERS.join('</td><td>')}</td>
+                        <td>${statHeaders.join('</td><td>')}</td>
+                    </tr>
+                    <tr align="center">
+                        <td>${char.basic.join('</td><td>')}</td>
+                        <td>${char.stats.join('</td><td>')}</td>
+                    </tr>
+                </table>
+            `;
+
+            // --- B. プロフィール（メモ）を生成 ---
+            const profileP = char.profile.map(p => `<p>${p}</p>`).join('');
+            const profileHTML = `<div class="tet-box">${profileP}</div>`;
+            
+            // --- C. トグルセクションを生成 ---
+            const toggleSectionsHTML = createToggleSections(char);
+
+            // --- D. 立ち絵と情報を分割して結合 ---
+            const portraitPath = char.portraitPath || 'CAs/portraits/placeholder.png'; // 立ち絵パスがなければ代替画像
+            
+            contentPanel.innerHTML = `
+                <div class="character-header-container">
+                    
+                    <div class="portrait-area">
+                        <img src="${portraitPath}" alt="${char.name}の立ち絵">
+                    </div>
+
+                    <div class="info-area">
+                        <div class="karte-temp-text"><h1><a href="${char.url}" style="text-decoration:none;">${char.name}</a></h1></div>
+                        <h2>${char.kana}</h2>
+                        <h3>${tableHTML}</h3>
+                        <p>${profileHTML}</p>
+                    </div>
+                </div>
+                
+                <hr>
+                ${toggleSectionsHTML}
+            `;
+
+            // 5. 新しく生成されたトグルボタンにイベントリスナーを再設定
+            setupToggleButtons(); 
+        }
+
+        // サイドナビゲーションボタンをJSONデータがロードされた後に生成する関数
+        function initButtons() {
+            const buttonListPanel = document.getElementById('button-list');
+            
+            characterData.forEach(item => {
+                const id = item.id;
+                const altText = item.altText;
+                
+                const imagePath = `CAs/buttoniconimg/${id}.png`;
+                
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = altText;
+                img.onclick = function() {
+                    loadContent(id); // IDを直接渡す
+                };
+
+                const anchor = document.createElement('a');
+                anchor.href = "#page_top";
+                anchor.appendChild(img);
+
+                buttonListPanel.appendChild(anchor);
+            });
+        }
+
+        // メインのクリックハンドラ
+        function loadContent(charId) {
+            const id = parseInt(charId, 10);
+            
+            if (id) {
+                generateCharacterContent(id); 
+            } else {
+                document.getElementById('content-panel').innerHTML = '<p>無効なキャラクターが選択されました。</p>';
+            }
+
+            window.scrollTo(0, 0); 
+        }
+
+        //  JSONファイルを読み込み、初期化する関数
+        async function initializeApplication() {
+            try {
+                // CAs_data.jsonを非同期で読み込む
+                const response = await fetch('CAs/characters.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                // JSONデータをパースし、グローバル変数に格納
+                characterData = await response.json();
+                
+                // データ取得後にボタン生成を開始
+                initButtons();
+                
+            } catch (error) {
+                console.error('Error loading character data:', error);
+                // データの読み込みに失敗した場合、ユーザーにメッセージを表示
+                document.getElementById('content-panel').innerHTML = '<p>キャラクターデータの読み込みに失敗しました。</p>';
+            }
+        }
+
+
+        // ------------------------------------
+        // 初期処理
+        // ------------------------------------
+        document.addEventListener('DOMContentLoaded', function() {
+            // アプリケーションの初期化を開始 (JSON読み込みとボタン生成)
+            initializeApplication(); 
+        });
+    </script>
+    <!--/main-->
 </body>
-
 </html>
-
