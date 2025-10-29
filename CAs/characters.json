@@ -463,8 +463,8 @@
         "url": "",
         "portraitPath": "CAs/portraits/24_tsukimura.png",
         "type": "CoC",
-        "basic": [],
-        "stats": [],
+        "basic": ["175", "女", "8/27", "25", "自営業"],
+        "stats": ["11", "10", "11", "11", "15", "14", "14", "17"],
         "profile": ["溺水しかけたことが由来"],
         "sections": [
             { "title": "持ち物", "content": [""] },
@@ -473,4 +473,5 @@
         ],
         "altText": "水溺"
     }
+
 ]
