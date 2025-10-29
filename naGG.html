@@ -1,327 +1,348 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiragana to Romaji Converter</title>
-    <style>
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+  <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+            <style>
+        main {
+ font-family: 'Noto Sans JP', sans-serif;
+width: 800px;
+ margin: 0 auto;
+ padding: 20px;
+ background-color: #f5f5f5;
         }
         h1 {
-            color: #333;
-            text-align: center;
+ color: #333;
+ text-align: center;
         }
         .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ background-color: white;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid #eee;
         }
         .section-title {
-            font-weight: bold;
-            margin-bottom: 10px;
+ font-weight: bold;
+ margin-bottom: 10px;
         }
         .input-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+ display: flex;
+ align-items: center;
+ margin-bottom: 10px;
         }
         .input-container label {
-            width: 80px;
-            margin-right: 10px;
+ width: 80px;
+ margin-right: 10px;
         }
         .input-container input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+ flex: 1;
+ padding: 8px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
         }
         .result {
-            margin-left: 10px;
-            color: #444;
+ margin-left: 10px;
+ color: #444;
         }
         textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            resize: vertical;
+ width: 100%;
+ height: 150px;
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ font-size: 16px;
+ resize: vertical;
         }
         .output {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 10px;
-            margin-top: 10px;
-            min-height: 100px;
-            white-space: pre-wrap;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
+ background-color: #f9f9f9;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ padding: 10px;
+ margin-top: 10px;
+ min-height: 100px;
+ white-space: pre-wrap;
+ font-family: 'Courier New', monospace;
+ font-size: 16px;
         }
         .special-output {
-            font-family: 'Arial', sans-serif;
+ font-family: 'Arial', sans-serif;
         }
 </style>
+  </head>
+<head>
+   <meta charset="utf-8"/>
+   <title>TMC</title>
+   <link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 </head>
 <body>
+      <header class="leftNavigation">
+    <div id="cover"></div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+    $("#cover").load("./header.html", function(response, status, xhr) {
+        if (status == "error") {
+            console.error("ヘッダーの読み込みに失敗しました:", xhr.status, xhr.statusText);
+        }
+    });
+});
+</script>
+
+    </header>
+	<main>
+
     <div class="container">
         <!-- Number Conversion Section -->
         <div class="section">
-            <div class="section-title">数値変換</div>
-            <div class="input-container">
-                <label for="decimal-input">10進数:</label>
-                <input type="text" id="decimal-input" placeholder="10進数を入力" />
-                <span class="result" id="hex-result"></span>
-            </div>
-            <div class="input-container">
-                <label for="hex-input">16進数:</label>
-                <input type="text" id="hex-input" placeholder="16進数を入力" />
-                <span class="result" id="decimal-result"></span>
-            </div>
+ <div class="section-title">数値変換</div>
+ <div class="input-container">
+     <label for="decimal-input">10進数:</label>
+     <input type="text" id="decimal-input" placeholder="10進数を入力" />
+     <span class="result" id="hex-result"></span>
+ </div>
+ <div class="input-container">
+     <label for="hex-input">16進数:</label>
+     <input type="text" id="hex-input" placeholder="16進数を入力" />
+     <span class="result" id="decimal-result"></span>
+ </div>
         </div>
         
         <!-- Text Conversion Section -->
         <div class="section">
-            <div class="section-title">文字変換</div>
-            <div>
-                <label for="input">ひらがな入力:</label>
-                <textarea id="input" placeholder="ここに入力してください..."></textarea>
-            </div>
-            
-            <div>
-                <label for="output">Romaji output:</label>
-                <div id="output" class="output"></div>
-            </div>
-            
-            <div>
-                <label for="special-output">Special transformation output:</label>
-                <div id="special-output" class="output special-output"></div>
-            </div>
-            
+ <div class="section-title">文字変換</div>
+ <div>
+     <label for="input">ひらがな入力:</label>
+     <textarea id="input" placeholder="ここに入力してください..."></textarea>
+ </div>
+ 
+ <div>
+     <label for="output">Romaji output:</label>
+     <div id="output" class="output"></div>
+ </div>
+ 
+ <div>
+     <label for="special-output">Special transformation output:</label>
+     <div id="special-output" class="output special-output"></div>
+ </div>
+ 
         </div>
     </div>
 
     <script>
         // Initialize event listeners when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            initNumberConverters();
-            initTextConverter();
+ initNumberConverters();
+ initTextConverter();
         });
 
         // Number conversion functions
         function initNumberConverters() {
-            const decimalInput = document.getElementById("decimal-input");
-            const hexInput = document.getElementById("hex-input");
-            const hexResult = document.getElementById("hex-result");
-            const decimalResult = document.getElementById("decimal-result");
+ const decimalInput = document.getElementById("decimal-input");
+ const hexInput = document.getElementById("hex-input");
+ const hexResult = document.getElementById("hex-result");
+ const decimalResult = document.getElementById("decimal-result");
 
-            // Decimal to hex conversion
-            decimalInput.addEventListener("input", () => {
-                const decimalValue = parseInt(decimalInput.value, 10);
-                if (!isNaN(decimalValue)) {
-                    hexResult.textContent = `= ${decimalValue.toString(16).toUpperCase()} (16進数)`;
-                } else {
-                    hexResult.textContent = "";
-                }
-            });
+ // Decimal to hex conversion
+ decimalInput.addEventListener("input", () => {
+     const decimalValue = parseInt(decimalInput.value, 10);
+     if (!isNaN(decimalValue)) {
+         hexResult.textContent = `= ${decimalValue.toString(16).toUpperCase()} (16進数)`;
+     } else {
+         hexResult.textContent = "";
+     }
+ });
 
-            // Hex to decimal conversion
-            hexInput.addEventListener("input", () => {
-                const hexValue = hexInput.value.trim();
-                const decimalValue = parseInt(hexValue, 16);
-                if (!isNaN(decimalValue)) {
-                    decimalResult.textContent = `= ${decimalValue} (10進数)`;
-                } else {
-                    decimalResult.textContent = "";
-                }
-            });
+ // Hex to decimal conversion
+ hexInput.addEventListener("input", () => {
+     const hexValue = hexInput.value.trim();
+     const decimalValue = parseInt(hexValue, 16);
+     if (!isNaN(decimalValue)) {
+         decimalResult.textContent = `= ${decimalValue} (10進数)`;
+     } else {
+         decimalResult.textContent = "";
+     }
+ });
         }
 
         // Text conversion functions
         function initTextConverter() {
-            const inputTextarea = document.getElementById('input');
-            inputTextarea.addEventListener('input', convertText);
+ const inputTextarea = document.getElementById('input');
+ inputTextarea.addEventListener('input', convertText);
         }
 
         function convertText() {
-            const input = document.getElementById('input').value;
-            const result = convertToRomaji(input);
-            
-            // Display the result with line breaks preserved
-            document.getElementById('output').textContent = result;
-            
-            // Apply special transformation to the romaji result
-            applySpecialTransformation(result);
+ const input = document.getElementById('input').value;
+ const result = convertToRomaji(input);
+ 
+ // Display the result with line breaks preserved
+ document.getElementById('output').textContent = result;
+ 
+ // Apply special transformation to the romaji result
+ applySpecialTransformation(result);
         }
         
         function convertToRomaji(input) {
-            // Character mapping definitions
-            const conversionMap = getConversionMap();
-            
-            // Convert text using the longest match first approach
-            const chars = Array.from(input);
-            let result = '';
-            let i = 0;
-            
-            while (i < chars.length) {
-                let matched = false;
-                
-                // Try to match 3-character sequences
-                if (i + 2 < chars.length) {
-                    const threeChars = chars[i] + chars[i+1] + chars[i+2];
-                    if (conversionMap[threeChars]) {
-                        result += conversionMap[threeChars];
-                        i += 3;
-                        matched = true;
-                        continue;
-                    }
-                }
-                
-                // Try to match 2-character sequences
-                if (i + 1 < chars.length) {
-                    const twoChars = chars[i] + chars[i+1];
-                    if (conversionMap[twoChars]) {
-                        result += conversionMap[twoChars];
-                        i += 2;
-                        matched = true;
-                        continue;
-                    }
-                }
-                
-                // Match single character
-                if (conversionMap[chars[i]]) {
-                    result += conversionMap[chars[i]];
-                    i++;
-                    matched = true;
-                    continue;
-                }
-                
-                // If no match found, keep the original character
-                if (!matched) {
-                    result += chars[i];
-                    i++;
-                }
-            }
-            
-            return result;
+ // Character mapping definitions
+ const conversionMap = getConversionMap();
+ 
+ // Convert text using the longest match first approach
+ const chars = Array.from(input);
+ let result = '';
+ let i = 0;
+ 
+ while (i < chars.length) {
+     let matched = false;
+     
+     // Try to match 3-character sequences
+     if (i + 2 < chars.length) {
+         const threeChars = chars[i] + chars[i+1] + chars[i+2];
+         if (conversionMap[threeChars]) {
+  result += conversionMap[threeChars];
+  i += 3;
+  matched = true;
+  continue;
+         }
+     }
+     
+     // Try to match 2-character sequences
+     if (i + 1 < chars.length) {
+         const twoChars = chars[i] + chars[i+1];
+         if (conversionMap[twoChars]) {
+  result += conversionMap[twoChars];
+  i += 2;
+  matched = true;
+  continue;
+         }
+     }
+     
+     // Match single character
+     if (conversionMap[chars[i]]) {
+         result += conversionMap[chars[i]];
+         i++;
+         matched = true;
+         continue;
+     }
+     
+     // If no match found, keep the original character
+     if (!matched) {
+         result += chars[i];
+         i++;
+     }
+ }
+ 
+ return result;
         }
         
         function applySpecialTransformation(originalText) {
-            // Character transformation mapping
-            const charTransform = {
-                'a': 'π;', 'b': 'ス', 'c': 'y', 'd': '二', 'e': 'e',
-                'f': 'S', 'g': 'R', 'h': '|으', 'i': 'p', 'j': '6',
-                'k': 'つ', 'l': 'æ', 'm': '牛', 'n': 'ﾄᖇ', 'o': '月',
-                'p': 'Đ', 'q': 'h', 'r': 'b', 's': 'Ɵ', 't': 'G',
-                'u': 'Ƹ', 'v': 'g', 'w': 'う', 'x': 'ħ', 'y': 'a',
-                'z': 'ჩ', '!': 'Ⴘ', '?': '-ə', '「': 'ɾ', '【': 'ɾ',
-                '{': 'ɾ', '｛': 'ɾ', '[': 'ɾ', '」': 'ɿ', '】': 'ɿ',
-                '}': 'ɿ', ']': 'ɿ'
-            };
-                
-            // Transform each character
-            const transformedText = originalText.split("").map(char => 
-                charTransform[char] || char
-            ).join("");
-                
-            // Display with line breaks preserved
-            document.getElementById('special-output').textContent = transformedText;
+ // Character transformation mapping
+ const charTransform = {
+     'a': 'π;', 'b': 'ス', 'c': 'y', 'd': '二', 'e': 'e',
+     'f': 'S', 'g': 'R', 'h': '|으', 'i': 'p', 'j': '6',
+     'k': 'つ', 'l': 'æ', 'm': '牛', 'n': 'ﾄᖇ', 'o': '月',
+     'p': 'Đ', 'q': 'h', 'r': 'b', 's': 'Ɵ', 't': 'G',
+     'u': 'Ƹ', 'v': 'g', 'w': 'う', 'x': 'ħ', 'y': 'a',
+     'z': 'ჩ', '!': 'Ⴘ', '?': '-ə', '「': 'ɾ', '【': 'ɾ',
+     '{': 'ɾ', '｛': 'ɾ', '[': 'ɾ', '」': 'ɿ', '】': 'ɿ',
+     '}': 'ɿ', ']': 'ɿ'
+ };
+     
+ // Transform each character
+ const transformedText = originalText.split("").map(char => 
+     charTransform[char] || char
+ ).join("");
+     
+ // Display with line breaks preserved
+ document.getElementById('special-output').textContent = transformedText;
         }
         
         function getConversionMap() {
-            // Basic hiragana to romaji mapping
-            const conversionMap = {
-                'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
-                'か': 'ka', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
-                'きゃ': 'kya', 'き': 'kyi', 'きゅ': 'kyu', 'きぇ': 'kye', 'きょ': 'kyo',
-                'が': 'ga', 'げ': 'ge', 'ご': 'go', 'ぐぁ': 'gua', 'ぐ': 'gu',
-                'ぐぇ': 'gue', 'ぐぉ': 'guo', 'ぎゃ': 'gya', 'ぎ': 'gyi', 'ぎゅ': 'gyu',
-                'ぎぇ': 'gye', 'ぎょ': 'gyo', 'す': 'su', 'せ': 'se', 'そ': 'so',
-                'さ': 'wa', 'しゃ': 'la', 'し': 'li', 'しゅ': 'lu', 'しょ': 'lo',
-                'すぁ': 'sya', 'すぃ': 'syi', 'すぅ': 'syu', 'すぇ': 'sye', 'すぉ': 'syo',
-                'ざ': 'dza', 'ず': 'dzu', 'ぜ': 'dze', 'ぞ': 'dzo',
-                'じゃ': 'ja', 'じ': 'ji', 'じゅ': 'ju', 'じぇ': 'je', 'じょ': 'jo',
-                'ずぁ': 'zya', 'ずぃ': 'zyi', 'ずゅ': 'zyu', 'ずぇ': 'zye', 'ずぉ': 'zyo',
-                'た': 'ta', 'て': 'te', 'と': 'to',
-                'ちゃ': 'tca', 'ち': 'tci', 'ちゅ': 'tco', 'ちょ': 'tco',
-                'つぁ': 'tsa', 'つぃ': 'tsi', 'つ': 'tsu', 'つぇ': 'tse', 'つぉ': 'tso',
-                'とぁ': 'toua', 'とぃ': 'toui', 'とぅ': 'tou', 'とぇ': 'toue', 'とぉ': 'touo',
-                'てゃ': 'tya', 'てぃ': 'tyi', 'てゅ': 'tyu', 'て': 'tye', 'てぉ': 'tyo',
-                'だ': 'da', 'ぢ': 'ji', 'づ': 'dzu', 'でぃ': 'di', 'でゅ': 'du',
-                'で': 'de', 'ど': 'do', 'どぁ': 'dua', 'どぃ': 'dui', 'どぇ': 'due',
-                'どぉ': 'duo', 'でゃ': 'dya', 'でゅ': 'dyu', 'でぇ': 'dye', 'でょ': 'dyo',
-                'な': 'na', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
-                'にゃ': 'qa', 'に': 'qi', 'にゅ': 'qu', 'にょ': 'qo',
-                'は': 'ha', 'へ': 'he', 'ほ': 'ho', 'ふ': 'hu',
-                'ひゃ': 'wa', 'ひゅ': 'wu', 'ひょ': 'wo', 'ひ': 'wyi',
-                'ば': 'ba', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
-                'びゃ': 'bya', 'び': 'byi', 'びゅ': 'byu', 'びょ': 'byo',
-                'ぱ': 'pa', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
-                'ぴゃ': 'pya', 'ぴ': 'pyi', 'ぴゅ': 'pyu', 'ぴぇ': 'pye', 'ぴょ': 'pyo',
-                'ま': 'ma', 'む': 'mu', 'め': 'me', 'も': 'mo',
-                'みゃ': 'mya', 'み': 'myi', 'みゅ': 'myu', 'みぇ': 'mye', 'みょ': 'myo',
-                'ら': 'ra', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
-                'りゃ': 'rya', 'り': 'ryi', 'りゅ': 'ryu', 'りぇ': 'rye', 'りょ': 'ryo',
-                'や': 'ya', 'ゆ': 'yu', 'よ': 'yo', 'を': 'o', 'ん': 'n',
-                'わ': 'ua', 'うぃ': 'ui', 'うぇ': 'ue', 'うぉ': 'uo',
-                'ヴぁ': 'va', 'ヴぃ': 'vi', 'ヴ': 'vu', 'ヴぇ': 've', 'ヴぉ': 'vo',
-                'っ': 'x', 'くぁ': 'ka', 'くぃ': 'kyi', 'く': 'ku', 'くぇ': 'ke', 'くぉ': 'ko',
-                'うぁ': 'ua', 'ちぃ': 'tci-', 'ちぇ': 'tce', 'すぇ': 'se', 'しぇ': 'se',
-                'ふぁ': 'fa', 'ふぃ': 'fi', 'ふぇ': 'fe', 'ふぉ': 'fo'
-            };
-            
-            // Add katakana equivalents to the conversion map
-            const hiraganaToKatakana = {
-                'あ': 'ア', 'い': 'イ', 'う': 'ウ', 'え': 'エ', 'お': 'オ',
-                'か': 'カ', 'き': 'キ', 'く': 'ク', 'け': 'ケ', 'こ': 'コ',
-                'さ': 'サ', 'し': 'シ', 'す': 'ス', 'せ': 'セ', 'そ': 'ソ',
-                'た': 'タ', 'ち': 'チ', 'つ': 'ツ', 'て': 'テ', 'と': 'ト',
-                'な': 'ナ', 'に': 'ニ', 'ぬ': 'ヌ', 'ね': 'ネ', 'の': 'ノ',
-                'は': 'ハ', 'ひ': 'ヒ', 'ふ': 'フ', 'へ': 'ヘ', 'ほ': 'ホ',
-                'ま': 'マ', 'み': 'ミ', 'む': 'ム', 'め': 'メ', 'も': 'モ',
-                'や': 'ヤ', 'ゆ': 'ユ', 'よ': 'ヨ',
-                'ら': 'ラ', 'り': 'リ', 'る': 'ル', 'れ': 'レ', 'ろ': 'ロ',
-                'わ': 'ワ', 'を': 'ヲ', 'ん': 'ン',
-                'が': 'ガ', 'ぎ': 'ギ', 'ぐ': 'グ', 'げ': 'ゲ', 'ご': 'ゴ',
-                'ざ': 'ザ', 'じ': 'ジ', 'ず': 'ズ', 'ぜ': 'ゼ', 'ぞ': 'ゾ',
-                'だ': 'ダ', 'ぢ': 'ヂ', 'づ': 'ヅ', 'で': 'デ', 'ど': 'ド',
-                'ば': 'バ', 'び': 'ビ', 'ぶ': 'ブ', 'べ': 'ベ', 'ぼ': 'ボ',
-                'ぱ': 'パ', 'ぴ': 'ピ', 'ぷ': 'プ', 'ぺ': 'ペ', 'ぽ': 'ポ',
-                'きゃ': 'キャ', 'きゅ': 'キュ', 'きょ': 'キョ',
-                'しゃ': 'シャ', 'しゅ': 'シュ', 'しょ': 'ショ',
-                'ちゃ': 'チャ', 'ちゅ': 'チュ', 'ちょ': 'チョ',
-                'にゃ': 'ニャ', 'にゅ': 'ニュ', 'にょ': 'ニョ',
-                'ひゃ': 'ヒャ', 'ひゅ': 'ヒュ', 'ひょ': 'ヒョ',
-                'みゃ': 'ミャ', 'みゅ': 'ミュ', 'みょ': 'ミョ',
-                'りゃ': 'リャ', 'りゅ': 'リュ', 'りょ': 'リョ',
-                'ぎゃ': 'ギャ', 'ぎゅ': 'ギュ', 'ぎょ': 'ギョ',
-                'じゃ': 'ジャ', 'じゅ': 'ジュ', 'じょ': 'ジョ',
-                'びゃ': 'ビャ', 'びゅ': 'ビュ', 'びょ': 'ビョ',
-                'ぴゃ': 'ピャ', 'ぴゅ': 'ピュ', 'ぴょ': 'ピョ'
-            };
+ // Basic hiragana to romaji mapping
+ const conversionMap = {
+     'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
+     'か': 'ka', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
+     'きゃ': 'kya', 'き': 'kyi', 'きゅ': 'kyu', 'きぇ': 'kye', 'きょ': 'kyo',
+     'が': 'ga', 'げ': 'ge', 'ご': 'go', 'ぐぁ': 'gua', 'ぐ': 'gu',
+     'ぐぇ': 'gue', 'ぐぉ': 'guo', 'ぎゃ': 'gya', 'ぎ': 'gyi', 'ぎゅ': 'gyu',
+     'ぎぇ': 'gye', 'ぎょ': 'gyo', 'す': 'su', 'せ': 'se', 'そ': 'so',
+     'さ': 'wa', 'しゃ': 'la', 'し': 'li', 'しゅ': 'lu', 'しょ': 'lo',
+     'すぁ': 'sya', 'すぃ': 'syi', 'すぅ': 'syu', 'すぇ': 'sye', 'すぉ': 'syo',
+     'ざ': 'dza', 'ず': 'dzu', 'ぜ': 'dze', 'ぞ': 'dzo',
+     'じゃ': 'ja', 'じ': 'ji', 'じゅ': 'ju', 'じぇ': 'je', 'じょ': 'jo',
+     'ずぁ': 'zya', 'ずぃ': 'zyi', 'ずゅ': 'zyu', 'ずぇ': 'zye', 'ずぉ': 'zyo',
+     'た': 'ta', 'て': 'te', 'と': 'to',
+     'ちゃ': 'tca', 'ち': 'tci', 'ちゅ': 'tco', 'ちょ': 'tco',
+     'つぁ': 'tsa', 'つぃ': 'tsi', 'つ': 'tsu', 'つぇ': 'tse', 'つぉ': 'tso',
+     'とぁ': 'toua', 'とぃ': 'toui', 'とぅ': 'tou', 'とぇ': 'toue', 'とぉ': 'touo',
+     'てゃ': 'tya', 'てぃ': 'tyi', 'てゅ': 'tyu', 'て': 'tye', 'てぉ': 'tyo',
+     'だ': 'da', 'ぢ': 'ji', 'づ': 'dzu', 'でぃ': 'di', 'でゅ': 'du',
+     'で': 'de', 'ど': 'do', 'どぁ': 'dua', 'どぃ': 'dui', 'どぇ': 'due',
+     'どぉ': 'duo', 'でゃ': 'dya', 'でゅ': 'dyu', 'でぇ': 'dye', 'でょ': 'dyo',
+     'な': 'na', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
+     'にゃ': 'qa', 'に': 'qi', 'にゅ': 'qu', 'にょ': 'qo',
+     'は': 'ha', 'へ': 'he', 'ほ': 'ho', 'ふ': 'hu',
+     'ひゃ': 'wa', 'ひゅ': 'wu', 'ひょ': 'wo', 'ひ': 'wyi',
+     'ば': 'ba', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
+     'びゃ': 'bya', 'び': 'byi', 'びゅ': 'byu', 'びょ': 'byo',
+     'ぱ': 'pa', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
+     'ぴゃ': 'pya', 'ぴ': 'pyi', 'ぴゅ': 'pyu', 'ぴぇ': 'pye', 'ぴょ': 'pyo',
+     'ま': 'ma', 'む': 'mu', 'め': 'me', 'も': 'mo',
+     'みゃ': 'mya', 'み': 'myi', 'みゅ': 'myu', 'みぇ': 'mye', 'みょ': 'myo',
+     'ら': 'ra', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
+     'りゃ': 'rya', 'り': 'ryi', 'りゅ': 'ryu', 'りぇ': 'rye', 'りょ': 'ryo',
+     'や': 'ya', 'ゆ': 'yu', 'よ': 'yo', 'を': 'o', 'ん': 'n',
+     'わ': 'ua', 'うぃ': 'ui', 'うぇ': 'ue', 'うぉ': 'uo',
+     'ヴぁ': 'va', 'ヴぃ': 'vi', 'ヴ': 'vu', 'ヴぇ': 've', 'ヴぉ': 'vo',
+     'っ': 'x', 'くぁ': 'ka', 'くぃ': 'kyi', 'く': 'ku', 'くぇ': 'ke', 'くぉ': 'ko',
+     'うぁ': 'ua', 'ちぃ': 'tci-', 'ちぇ': 'tce', 'すぇ': 'se', 'しぇ': 'se',
+     'ふぁ': 'fa', 'ふぃ': 'fi', 'ふぇ': 'fe', 'ふぉ': 'fo'
+ };
+ 
+ // Add katakana equivalents to the conversion map
+ const hiraganaToKatakana = {
+     'あ': 'ア', 'い': 'イ', 'う': 'ウ', 'え': 'エ', 'お': 'オ',
+     'か': 'カ', 'き': 'キ', 'く': 'ク', 'け': 'ケ', 'こ': 'コ',
+     'さ': 'サ', 'し': 'シ', 'す': 'ス', 'せ': 'セ', 'そ': 'ソ',
+     'た': 'タ', 'ち': 'チ', 'つ': 'ツ', 'て': 'テ', 'と': 'ト',
+     'な': 'ナ', 'に': 'ニ', 'ぬ': 'ヌ', 'ね': 'ネ', 'の': 'ノ',
+     'は': 'ハ', 'ひ': 'ヒ', 'ふ': 'フ', 'へ': 'ヘ', 'ほ': 'ホ',
+     'ま': 'マ', 'み': 'ミ', 'む': 'ム', 'め': 'メ', 'も': 'モ',
+     'や': 'ヤ', 'ゆ': 'ユ', 'よ': 'ヨ',
+     'ら': 'ラ', 'り': 'リ', 'る': 'ル', 'れ': 'レ', 'ろ': 'ロ',
+     'わ': 'ワ', 'を': 'ヲ', 'ん': 'ン',
+     'が': 'ガ', 'ぎ': 'ギ', 'ぐ': 'グ', 'げ': 'ゲ', 'ご': 'ゴ',
+     'ざ': 'ザ', 'じ': 'ジ', 'ず': 'ズ', 'ぜ': 'ゼ', 'ぞ': 'ゾ',
+     'だ': 'ダ', 'ぢ': 'ヂ', 'づ': 'ヅ', 'で': 'デ', 'ど': 'ド',
+     'ば': 'バ', 'び': 'ビ', 'ぶ': 'ブ', 'べ': 'ベ', 'ぼ': 'ボ',
+     'ぱ': 'パ', 'ぴ': 'ピ', 'ぷ': 'プ', 'ぺ': 'ペ', 'ぽ': 'ポ',
+     'きゃ': 'キャ', 'きゅ': 'キュ', 'きょ': 'キョ',
+     'しゃ': 'シャ', 'しゅ': 'シュ', 'しょ': 'ショ',
+     'ちゃ': 'チャ', 'ちゅ': 'チュ', 'ちょ': 'チョ',
+     'にゃ': 'ニャ', 'にゅ': 'ニュ', 'にょ': 'ニョ',
+     'ひゃ': 'ヒャ', 'ひゅ': 'ヒュ', 'ひょ': 'ヒョ',
+     'みゃ': 'ミャ', 'みゅ': 'ミュ', 'みょ': 'ミョ',
+     'りゃ': 'リャ', 'りゅ': 'リュ', 'りょ': 'リョ',
+     'ぎゃ': 'ギャ', 'ぎゅ': 'ギュ', 'ぎょ': 'ギョ',
+     'じゃ': 'ジャ', 'じゅ': 'ジュ', 'じょ': 'ジョ',
+     'びゃ': 'ビャ', 'びゅ': 'ビュ', 'びょ': 'ビョ',
+     'ぴゃ': 'ピャ', 'ぴゅ': 'ピュ', 'ぴょ': 'ピョ'
+ };
 
-            // Add katakana equivalents to the conversion map
-            for (const [hiragana, romaji] of Object.entries(conversionMap)) {
-                if (hiraganaToKatakana[hiragana]) {
-                    conversionMap[hiraganaToKatakana[hiragana]] = romaji;
-                }
-            }
-            
-            return conversionMap;
+ // Add katakana equivalents to the conversion map
+ for (const [hiragana, romaji] of Object.entries(conversionMap)) {
+     if (hiraganaToKatakana[hiragana]) {
+         conversionMap[hiraganaToKatakana[hiragana]] = romaji;
+     }
+ }
+ 
+ return conversionMap;
         }
     </script>
+	</main>
 </body>
 </html>
