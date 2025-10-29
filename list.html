@@ -152,11 +152,16 @@
     <header class="leftNavigation">
     <div id="cover"></div>
     </header>
-    <script>
-        $(function(){
-            $("#cover").load("header.html");
-        });
-    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+    $("#cover").load("./header.html", function(response, status, xhr) {
+        if (status == "error") {
+            console.error("ヘッダーの読み込みに失敗しました:", xhr.status, xhr.statusText);
+        }
+    });
+});
+</script>
 
     <div class="container">
         <div class="button-panel" id="button-list">
