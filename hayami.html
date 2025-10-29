@@ -2,7 +2,6 @@
 <html lang="ja">
   <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>   
   </head>
 <head>
    <meta charset="utf-8"/>
@@ -13,11 +12,17 @@
 <body>
       <header class="leftNavigation">
     <div id="cover"></div>
-    <script>
- $(function(){
- $("#cover").load("header.html");
-        });
-    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+    $("#cover").load("./header.html", function(response, status, xhr) {
+        if (status == "error") {
+            console.error("ヘッダーの読み込みに失敗しました:", xhr.status, xhr.statusText);
+        }
+    });
+});
+</script>
+
     </header>
 	<!--main-->
     <div class="content2"> 
