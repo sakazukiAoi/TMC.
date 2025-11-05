@@ -460,7 +460,7 @@
         "id": 25,
         "name": "水溺",
         "kana": "スイミン",
-        "url": "",
+        "url": "https://iachara.com/view/6865429",
         "portraitPath": "CAs/portraits/24_tsukimura.png",
         "type": "CoC",
         "basic": ["175", "女", "8/27", "25", "自営業"],
@@ -475,3 +475,4 @@
     }
 
 ]
+
